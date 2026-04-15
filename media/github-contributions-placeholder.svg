@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Placeholder para contribuições do GitHub">
+  <rect width="1600" height="1000" fill="#fffaf1"/>
+  <rect x="54" y="54" width="1492" height="892" rx="42" fill="#f5efe3" stroke="#19221d" stroke-width="8"/>
+  <rect x="90" y="90" width="520" height="86" rx="20" fill="#2c6636"/>
+  <text x="130" y="145" fill="#fffaf1" font-family="IBM Plex Mono, monospace" font-size="34">contribuições / github</text>
+  <g transform="translate(116,242)">
+    <rect width="1360" height="574" rx="28" fill="#fffaf1" stroke="#19221d" stroke-width="6"/>
+    <g fill="#d4e8d4">
+      <rect x="64" y="82" width="42" height="42" rx="8"/>
+      <rect x="118" y="82" width="42" height="42" rx="8"/>
+      <rect x="172" y="82" width="42" height="42" rx="8"/>
+      <rect x="226" y="82" width="42" height="42" rx="8"/>
+      <rect x="280" y="82" width="42" height="42" rx="8"/>
+      <rect x="334" y="82" width="42" height="42" rx="8"/>
+      <rect x="388" y="82" width="42" height="42" rx="8"/>
+      <rect x="442" y="82" width="42" height="42" rx="8"/>
+      <rect x="496" y="82" width="42" height="42" rx="8"/>
+      <rect x="550" y="82" width="42" height="42" rx="8"/>
+      <rect x="604" y="82" width="42" height="42" rx="8"/>
+      <rect x="658" y="82" width="42" height="42" rx="8"/>
+      <rect x="712" y="82" width="42" height="42" rx="8"/>
+      <rect x="766" y="82" width="42" height="42" rx="8"/>
+      <rect x="820" y="82" width="42" height="42" rx="8"/>
+      <rect x="874" y="82" width="42" height="42" rx="8"/>
+      <rect x="928" y="82" width="42" height="42" rx="8"/>
+      <rect x="982" y="82" width="42" height="42" rx="8"/>
+      <rect x="1036" y="82" width="42" height="42" rx="8"/>
+      <rect x="1090" y="82" width="42" height="42" rx="8"/>
+      <rect x="1144" y="82" width="42" height="42" rx="8"/>
+      <rect x="1198" y="82" width="42" height="42" rx="8"/>
+    </g>
+    <g fill="#4ade80">
+      <rect x="172" y="136" width="42" height="42" rx="8"/>
+      <rect x="226" y="136" width="42" height="42" rx="8"/>
+      <rect x="334" y="136" width="42" height="42" rx="8"/>
+      <rect x="496" y="136" width="42" height="42" rx="8"/>
+      <rect x="550" y="136" width="42" height="42" rx="8"/>
+      <rect x="712" y="136" width="42" height="42" rx="8"/>
+      <rect x="820" y="136" width="42" height="42" rx="8"/>
+      <rect x="1036" y="136" width="42" height="42" rx="8"/>
+      <rect x="1198" y="136" width="42" height="42" rx="8"/>
+      <rect x="124" y="190" width="42" height="42" rx="8"/>
+      <rect x="280" y="190" width="42" height="42" rx="8"/>
+      <rect x="388" y="190" width="42" height="42" rx="8"/>
+      <rect x="442" y="190" width="42" height="42" rx="8"/>
+      <rect x="604" y="190" width="42" height="42" rx="8"/>
+      <rect x="874" y="190" width="42" height="42" rx="8"/>
+      <rect x="928" y="190" width="42" height="42" rx="8"/>
+      <rect x="1090" y="190" width="42" height="42" rx="8"/>
+    </g>
+    <g fill="#2c6636">
+      <rect x="118" y="244" width="42" height="42" rx="8"/>
+      <rect x="172" y="244" width="42" height="42" rx="8"/>
+      <rect x="334" y="244" width="42" height="42" rx="8"/>
+      <rect x="388" y="244" width="42" height="42" rx="8"/>
+      <rect x="442" y="244" width="42" height="42" rx="8"/>
+      <rect x="604" y="244" width="42" height="42" rx="8"/>
+      <rect x="658" y="244" width="42" height="42" rx="8"/>
+      <rect x="712" y="244" width="42" height="42" rx="8"/>
+      <rect x="874" y="244" width="42" height="42" rx="8"/>
+      <rect x="928" y="244" width="42" height="42" rx="8"/>
+      <rect x="1036" y="244" width="42" height="42" rx="8"/>
+      <rect x="1090" y="244" width="42" height="42" rx="8"/>
+      <rect x="1198" y="244" width="42" height="42" rx="8"/>
+    </g>
+    <path d="M992 378C1120 378 1224 482 1224 610H760C760 482 864 378 992 378Z" fill="#f59e0b" opacity=".18"/>
+    <text x="64" y="486" fill="#1e4d26" font-family="Space Grotesk, sans-serif" font-size="46">Coloque aqui um print do seu heatmap</text>
+    <text x="64" y="548" fill="#4b5563" font-family="Space Grotesk, sans-serif" font-size="34">ou um recorte do perfil mostrando constância de contribuição.</text>
+  </g>
+</svg>

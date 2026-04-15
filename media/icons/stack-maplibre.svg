@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MapLibre">
+  <rect width="64" height="64" rx="18" fill="#EEF6EE"/>
+  <path d="M14 20l10-4 16 6 10-4v26l-10 4-16-6-10 4Z" fill="#D4E8D4" stroke="#1E4D26" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M24 16v26M40 22v26" stroke="#1E4D26" stroke-width="3"/>
+  <circle cx="32" cy="29" r="6" fill="#2C6636"/>
+  <path d="M32 22c3.9 0 7 3.1 7 7 0 5.7-7 13-7 13s-7-7.3-7-13c0-3.9 3.1-7 7-7Z" fill="#2C6636"/>
+  <circle cx="32" cy="29" r="2.8" fill="#FFFAF1"/>
+</svg>

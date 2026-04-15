@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-label="Placeholder para foto de perfil">
+  <rect width="900" height="1200" fill="#f5efe3"/>
+  <rect x="62" y="62" width="776" height="1076" rx="120" fill="#fffaf1" stroke="#19221d" stroke-width="8"/>
+  <path d="M640 62C746 62 838 154 838 260V560H420C332 560 260 488 260 400V62Z" fill="#2c6636"/>
+  <circle cx="310" cy="440" r="112" fill="#f59e0b"/>
+  <path d="M190 922C190 760 322 628 484 628C646 628 778 760 778 922V1048H190Z" fill="#1e4d26"/>
+  <circle cx="484" cy="430" r="124" fill="#eadfca"/>
+  <path d="M356 531C356 460 413 403 484 403C555 403 612 460 612 531V591H356Z" fill="#eadfca"/>
+  <rect x="122" y="96" width="270" height="44" rx="22" fill="#f5efe3" stroke="#19221d" stroke-width="6"/>
+  <text x="150" y="126" fill="#1e4d26" font-family="IBM Plex Mono, monospace" font-size="28">foto de perfil</text>
+  <text x="124" y="1110" fill="#4b5563" font-family="Space Grotesk, sans-serif" font-size="38">Substitua por uma foto vertical sua</text>
+</svg>

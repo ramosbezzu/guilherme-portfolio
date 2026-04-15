@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Placeholder para screenshot de produto">
+  <rect width="1600" height="1000" fill="#f5efe3"/>
+  <rect x="56" y="56" width="1488" height="888" rx="42" fill="#fffaf1" stroke="#19221d" stroke-width="8"/>
+  <rect x="88" y="88" width="442" height="82" rx="20" fill="#2c6636"/>
+  <text x="126" y="140" fill="#fffaf1" font-family="IBM Plex Mono, monospace" font-size="34">screenshot / produto</text>
+  <g transform="translate(106,222)">
+    <rect width="1388" height="648" rx="36" fill="#fffaf1" stroke="#19221d" stroke-width="6"/>
+    <rect x="42" y="42" width="1304" height="72" rx="20" fill="#f0e5d4"/>
+    <rect x="42" y="150" width="286" height="454" rx="24" fill="#1e4d26"/>
+    <rect x="366" y="150" width="980" height="164" rx="24" fill="#d4e8d4"/>
+    <rect x="366" y="340" width="474" height="264" rx="24" fill="#fffaf1" stroke="#19221d" stroke-width="4"/>
+    <rect x="872" y="340" width="474" height="264" rx="24" fill="#fffaf1" stroke="#19221d" stroke-width="4"/>
+    <circle cx="142" cy="78" r="12" fill="#dc2626"/>
+    <circle cx="176" cy="78" r="12" fill="#f59e0b"/>
+    <circle cx="210" cy="78" r="12" fill="#2c6636"/>
+    <text x="404" y="250" fill="#1e4d26" font-family="Space Grotesk, sans-serif" font-size="48">Coloque aqui um print real do produto</text>
+    <text x="404" y="304" fill="#4b5563" font-family="Space Grotesk, sans-serif" font-size="32">LeafDFe, dashboard, fluxo fiscal ou qualquer interface que prove execução.</text>
+  </g>
+</svg>

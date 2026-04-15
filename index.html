@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guilherme Bezzuoli Ramos | Portfólio</title>
+    <meta
+      name="description"
+      content="Portfólio de Guilherme Bezzuoli Ramos: SaaS, IA aplicada, automação e interfaces operacionais para produtos web."
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#inicio">GBR / Portfolio</a>
+        <div class="topbar__actions">
+          <nav class="nav" id="top-nav" aria-label="Navegação principal">
+            <a id="nav-projects" href="#projetos">Projetos</a>
+            <a id="nav-stack" href="#stack">Negócio & Stack</a>
+            <a id="nav-contact" href="#contato">Contato</a>
+          </nav>
+          <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Ver portfolio em inglês">
+            <img
+              class="lang-toggle__icon"
+              id="lang-toggle-icon"
+              src="./media/anglo-flag-blend.svg"
+              alt=""
+            />
+            <span class="lang-toggle__label" id="lang-toggle-label">EN / Intl</span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero section" id="inicio" data-reveal>
+          <aside class="menu-panel" data-reveal>
+            <p class="menu-panel__eyebrow" id="menu-eyebrow">Menu</p>
+            <nav class="menu-panel__nav" aria-label="Menu lateral">
+              <a id="menu-home" href="#inicio">Início</a>
+              <a id="menu-feature" href="#destaque">Destaque</a>
+              <a id="menu-evidence" href="#evidencias">Evidências</a>
+              <a id="menu-projects" href="#projetos">Projetos</a>
+              <a id="menu-stack" href="#stack">Negócio & Stack</a>
+              <a id="menu-contact" href="#contato">Contato</a>
+            </nav>
+            <div class="menu-panel__footer">
+              <p id="menu-footer-text">Disponível para produto, automação e processos.</p>
+            </div>
+          </aside>
+
+          <div class="hero__copy">
+            <p class="eyebrow" id="hero-eyebrow">Portfólio técnico / GitHub Pages / 2026</p>
+            <h1 id="hero-title">Produto, automação e interface com lastro técnico.</h1>
+            <p class="hero__lede" id="hero-lede">
+              Sou <strong>Guilherme Bezzuoli Ramos</strong>, desenvolvedor
+              full-stack com base em ERP, análise de processos, requisitos e
+              desenvolvimento web. Meu trabalho mistura SaaS, integrações,
+              automação e interface operacional para reduzir retrabalho e dar
+              mais clareza ao negócio.
+            </p>
+
+            <article class="hero__manifesto">
+              <p class="hero__manifesto-title" id="hero-manifesto-title">Direção visual desta página</p>
+              <p id="hero-manifesto-text">
+                Paleta inspirada no LeafDFe, com contraste seco, blocos
+                estruturais e curvas que puxam para um modernismo brasileiro
+                mais arquitetônico.
+              </p>
+            </article>
+
+            <div class="hero__actions">
+              <a class="button button--primary" id="hero-cta-projects" href="#projetos">Ver projetos</a>
+              <a
+                class="button button--ghost"
+                id="hero-cta-leaf"
+                href="https://www.leafdfe.com.br/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver LeafDFe
+              </a>
+            </div>
+
+            <ul class="identity-list" id="identity-list" aria-label="Resumo profissional"></ul>
+
+            <article class="country-ribbon">
+              <div class="country-ribbon__flag">
+                <img
+                  id="country-flag-image"
+                  src="./media/brazil-brutalist-flag.svg"
+                  alt="Bandeira do Brasil em interpretação vetorial brutalista"
+                />
+              </div>
+              <div class="country-ribbon__copy">
+                <p class="country-ribbon__eyebrow" id="country-ribbon-eyebrow">Brasil / São Paulo</p>
+                <p id="country-ribbon-text">
+                  Base local com repertório em ERP, processos, produto e
+                  operação web.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="hero__stage" data-reveal>
+            <article class="profile-card">
+              <p class="profile-card__label" id="profile-label">Foto de perfil</p>
+              <div class="profile-card__frame">
+                <img
+                  id="profile-image"
+                  src="./media/profile.jpg"
+                  alt="Foto de perfil de Guilherme Bezzuoli Ramos"
+                  onerror="this.onerror=null;this.src='./media/profile-placeholder.svg';"
+                />
+              </div>
+              <div class="profile-card__body">
+                <h3>Guilherme Bezzuoli Ramos</h3>
+                <p class="profile-card__role" id="profile-role">
+                  Full-stack para SaaS, ERP, processos e automação operacional.
+                </p>
+                <ul class="profile-card__meta" id="profile-meta"></ul>
+                <div class="profile-card__actions">
+                  <a class="button button--primary" id="profile-email-cta" href="mailto:guilhermebezzuoli@gmail.com">Falar por e-mail</a>
+                  <a class="button button--ghost" id="profile-cv-cta" href="./CV-GuilhermeBezzuoliRamos.pdf" target="_blank" rel="noreferrer">Baixar CV</a>
+                </div>
+              </div>
+            </article>
+
+            <aside class="hero__panel">
+              <p class="panel__kicker" id="panel-kicker">Projeto principal em produção</p>
+              <h2>LeafDFe</h2>
+              <p class="panel__text" id="panel-text">
+                SaaS fiscal para captura, manifestação, consulta e
+                armazenamento de documentos eletrônicos, com checkout, API REST
+                e operação multi-tenant.
+              </p>
+              <div class="panel__chips" id="hero-stack-chips"></div>
+
+              <div class="hero__stats" id="hero-stats"></div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="feature section" id="destaque" data-reveal>
+          <div class="section-head">
+            <p class="eyebrow" id="feature-eyebrow">Case principal</p>
+            <h2 id="feature-title">LeafDFe é o melhor retrato do tipo de produto que eu gosto de construir.</h2>
+          </div>
+
+          <div class="feature__layout">
+            <article class="feature__content">
+              <p id="feature-paragraph-1">
+                O LeafDFe consolida frontend, backend, regras fiscais,
+                autenticação, billing, armazenamento seguro e automações de
+                operação em um único produto. No código local, a stack está
+                organizada sobre <strong>Next.js 16</strong>,
+                <strong>React 19</strong>, <strong>TypeScript</strong>,
+                <strong>Prisma</strong>, <strong>Clerk</strong>,
+                <strong>Upstash Redis</strong> e <strong>Cloudflare R2</strong>.
+              </p>
+              <p id="feature-paragraph-2">
+                O foco do produto é tirar o fiscal do modo manual: consulta na
+                SEFAZ, manifestação em lote, download de XML e DANFE,
+                multiempresa, armazenamento em nuvem e checkout pronto para
+                crescimento comercial.
+              </p>
+            </article>
+
+            <div class="feature__cards">
+              <article class="mini-card">
+                <p class="mini-card__title" id="feature-card-title">O que entra nesse case</p>
+                <ul class="mini-card__list" id="feature-card-list"></ul>
+              </article>
+
+              <article class="mini-card mini-card--accent">
+                <p class="mini-card__title" id="feature-link-title">Link público</p>
+                <a
+                  class="mini-card__link"
+                  href="https://www.leafdfe.com.br/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  leafdfe.com.br
+                </a>
+                <p class="mini-card__note" id="feature-link-note">
+                  Produto ao vivo com posicionamento SaaS para NF-e, CT-e e
+                  MDF-e.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--evidence" id="evidencias" data-reveal>
+          <div class="section-head">
+            <p class="eyebrow" id="evidence-eyebrow">Evidências visuais</p>
+            <h2 id="evidence-title">Produto real, atividade real, interface real.</h2>
+            <p class="section-copy" id="evidence-copy">
+              LeafDFe em destaque, com recortes complementares de produto e
+              atividade pública.
+            </p>
+          </div>
+
+          <div class="evidence-layout">
+            <div class="gallery-grid" id="gallery-grid" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <section class="section" id="projetos" data-reveal>
+          <div class="section-head">
+            <p class="eyebrow" id="projects-eyebrow">Projetos selecionados</p>
+            <h2 id="projects-title">Quatro trabalhos que mostram produto, arquitetura e execução.</h2>
+            <p class="section-copy" id="projects-copy">
+              Alguns destes projetos vivem em ambientes privados ou internos.
+              Por isso, o foco aqui está no problema resolvido, na stack e nas
+              decisões de implementação.
+            </p>
+          </div>
+
+          <div class="projects-grid" id="projects-grid" aria-live="polite"></div>
+        </section>
+
+        <section class="section section--split" id="stack" data-reveal>
+          <div>
+            <div class="section-head section-head--compact">
+              <p class="eyebrow" id="business-eyebrow">Negócio e processo</p>
+              <h2 id="business-title">Experiência aplicada em ERP, dados, requisitos e fluxo operacional.</h2>
+            </div>
+            <div class="principles" id="business-cards"></div>
+          </div>
+
+          <div>
+            <div class="section-head section-head--compact">
+              <p class="eyebrow" id="stack-eyebrow">Stack validada no workspace</p>
+              <h2 id="stack-title">Tecnologias que aparecem de verdade nos projetos acima.</h2>
+            </div>
+            <div class="stack-wall" id="stack-wall"></div>
+            <div class="stack-groups" id="stack-groups"></div>
+          </div>
+        </section>
+
+        <section class="contact section" id="contato" data-reveal>
+          <div class="contact__hero">
+            <div class="contact__copy">
+              <p class="eyebrow" id="contact-eyebrow">Contato</p>
+              <h2 id="contact-title">Aberto para conversar sobre produto, frontend, integrações e automação.</h2>
+              <p id="contact-copy">
+                Se fizer sentido para a vaga, o melhor caminho é falar comigo
+                por e-mail, telefone ou olhar meus perfis e materiais públicos.
+                O portfólio foi montado para ser direto e fácil de compartilhar
+                em processo seletivo.
+              </p>
+            </div>
+
+            <div class="contact__primary" id="contact-primary"></div>
+          </div>
+
+          <div class="contact__secondary" id="contact-secondary"></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>© <span id="current-year"></span> Guilherme Bezzuoli Ramos.</p>
+        <p id="footer-copy">Portfolio estático pronto para publicar no GitHub Pages.</p>
+      </footer>
+    </div>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
