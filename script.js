@@ -123,27 +123,86 @@ const localeContent = {
         "SaaS fiscal para captura, manifestação, consulta e armazenamento de documentos eletrônicos, com checkout, API REST e operação multiempresa."
     },
     feature: {
-      eyebrow: "Case principal",
-      title: "LeafDFe resume bem o tipo de problema que eu gosto de pegar.",
-      paragraph1:
-        "No LeafDFe eu junto frontend, backend, regra fiscal, autenticação, cobrança e armazenamento no mesmo produto. A base atual usa <strong>Next.js</strong>, <strong>React</strong>, <strong>TypeScript</strong>, <strong>Prisma</strong>, <strong>Clerk</strong>, <strong>Upstash Redis</strong> e <strong>Cloudflare R2</strong>.",
-      paragraph2:
-        "O objetivo sempre foi simples: tirar o fiscal do trabalho manual. Isso inclui consulta na SEFAZ, manifestação em lote, download de XML e DANFE, multiempresa, armazenamento em nuvem e um checkout que não atrapalha a venda.",
-      cardTitle: "O que esse case mostra",
-      cardItems: [
-        "Integração com SEFAZ sem depender de rotina manual",
-        "Checkout e cobrança encaixados no produto",
-        "Arquitetura multiempresa com guarda segura de documentos",
-        "Interface pensada para operador, não só para demo"
-      ],
-      linkTitle: "Link público",
-      linkNote: "Produto ao vivo com posicionamento SaaS para NF-e, CT-e e MDF-e."
+      eyebrow: "Cases principais",
+      title: "Leaf Delivery e LeafDFe mostram meu trabalho em produto operacional."
     },
     evidence: {
       eyebrow: "Recortes reais",
       title: "Produto publicado, interface em uso e atividade pública.",
-      copy: "Aqui eu mostro o LeafDFe e alguns recortes que ajudam a provar autoria e consistência."
+      copy: "Os prints principais viraram slideshows para mostrar Leaf Delivery e LeafDFe sem alongar demais a página."
     },
+    featureCases: [
+      {
+        title: "Leaf Delivery",
+        eyebrow: "Delivery white-label",
+        summary:
+          "SaaS para restaurante, adega e operação local vender pelo próprio canal sem perder pedido entre WhatsApp, balcão, cozinha, mesa e entrega.",
+        points: [
+          "Storefront, checkout, tracking, mesa QR, garçom, comandas e KDS no mesmo produto.",
+          "WhatsApp/Evolution, iFood, PIX Abacate Pay, cupons, estoque e receitas dentro da rotina operacional.",
+          "Admin tenant e admin geral com permissões, multiunidade, planos comerciais e operação em produção."
+        ],
+        stack: ["Next.js", "React", "TypeScript", "Prisma", "PostgreSQL", "Vitest", "AbacatePay", "Evolution API", "iFood"],
+        link: { label: "leafdelivery.com.br", href: "https://leafdelivery.com.br/" },
+        images: [
+          {
+            image: "./media/leaf-delivery-pedidos.png",
+            alt: "Screenshot da central de pedidos do Leaf Delivery",
+            title: "Pedidos ao vivo"
+          },
+          {
+            image: "./media/leaf-delivery-kds.png",
+            alt: "Screenshot da tela de cozinha KDS do Leaf Delivery",
+            title: "KDS de cozinha"
+          },
+          {
+            image: "./media/leaf-delivery-storefront.png",
+            alt: "Screenshot do storefront mobile do Leaf Delivery com carrinho",
+            title: "Storefront mobile"
+          },
+          {
+            image: "./media/leaf-delivery-whatsapp.png",
+            alt: "Screenshot da inbox WhatsApp do Leaf Delivery",
+            title: "WhatsApp na operação"
+          }
+        ]
+      },
+      {
+        title: "LeafDFe",
+        eyebrow: "SaaS fiscal",
+        summary:
+          "SaaS fiscal para tirar consulta, manifestação e guarda de DF-e da rotina manual, com cobrança, autenticação e multiempresa no mesmo fluxo.",
+        points: [
+          "Consulta e manifestação na SEFAZ para NF-e, CT-e e MDF-e.",
+          "Download de XML e DANFE, guarda em nuvem, relatórios e operação multiempresa.",
+          "Checkout, autenticação, Redis, Prisma e Cloudflare R2 encaixados no produto."
+        ],
+        stack: ["Next.js", "React", "TypeScript", "Prisma", "Clerk", "Upstash Redis", "Cloudflare R2", "AbacatePay", "SEFAZ"],
+        link: { label: "leafdfe.com.br", href: "https://www.leafdfe.com.br/" },
+        images: [
+          {
+            image: "./media/leaf-dashboard.png",
+            alt: "Screenshot do dashboard do LeafDFe",
+            title: "Dashboard fiscal"
+          },
+          {
+            image: "./media/leaf-documentos.png",
+            alt: "Screenshot da tela de documentos fiscais do LeafDFe",
+            title: "Documentos fiscais"
+          },
+          {
+            image: "./media/leaf-multiempresas.png",
+            alt: "Screenshot da tela de unidades e certificados do LeafDFe",
+            title: "Multiempresa"
+          },
+          {
+            image: "./media/leaf-relatorios.png",
+            alt: "Screenshot da tela de relatórios fiscais do LeafDFe",
+            title: "Relatórios"
+          }
+        ]
+      }
+    ],
     projectsSection: {
       eyebrow: "Projetos selecionados",
       title: "Cinco projetos que mostram onde eu agrego mais valor.",
@@ -529,27 +588,86 @@ const localeContent = {
         "Tax SaaS for ingestion, manifestation, lookup and storage of electronic fiscal documents, with checkout, REST APIs and multi-company workflows."
     },
     feature: {
-      eyebrow: "Main case",
-      title: "LeafDFe is the clearest example of the kind of problem I like working on.",
-      paragraph1:
-        "LeafDFe brings frontend, backend, tax workflows, authentication, billing and secure storage into the same product. The current base uses <strong>Next.js</strong>, <strong>React</strong>, <strong>TypeScript</strong>, <strong>Prisma</strong>, <strong>Clerk</strong>, <strong>Upstash Redis</strong> and <strong>Cloudflare R2</strong>.",
-      paragraph2:
-        "The goal was always simple: get fiscal work out of manual mode. That means SEFAZ lookups, batch manifestation, XML and DANFE downloads, multi-company management, cloud storage and a checkout flow that does not get in the way.",
-      cardTitle: "What this case proves",
-      cardItems: [
-        "SEFAZ-heavy flows without manual busywork",
-        "Checkout and billing inside the product",
-        "Multi-tenant architecture with secure document storage",
-        "Operational UI built for daily use, not for screenshots"
-      ],
-      linkTitle: "Public link",
-      linkNote: "Live SaaS product for NF-e, CT-e and MDF-e workflows."
+      eyebrow: "Main cases",
+      title: "Leaf Delivery and LeafDFe show my work on operational products."
     },
     evidence: {
       eyebrow: "Real proof",
       title: "Published product, live interface and public activity.",
-      copy: "This section shows LeafDFe first, then a few supporting pieces that help prove authorship and consistency."
+      copy: "The main screenshots now run as compact slideshows for Leaf Delivery and LeafDFe, so the portfolio stays tighter."
     },
+    featureCases: [
+      {
+        title: "Leaf Delivery",
+        eyebrow: "White-label delivery",
+        summary:
+          "SaaS for restaurants, liquor stores and local operations to sell through their own channel without losing orders across WhatsApp, counter service, kitchen, tables and delivery.",
+        points: [
+          "Storefront, checkout, public tracking, table QR, waiter flow, tabs and KDS in one product.",
+          "WhatsApp/Evolution, iFood, Abacate Pay PIX, coupons, inventory and recipes inside the operational routine.",
+          "Tenant admin and platform admin with permissions, multi-unit operations, commercial plans and live production workflows."
+        ],
+        stack: ["Next.js", "React", "TypeScript", "Prisma", "PostgreSQL", "Vitest", "AbacatePay", "Evolution API", "iFood"],
+        link: { label: "leafdelivery.com.br", href: "https://leafdelivery.com.br/" },
+        images: [
+          {
+            image: "./media/leaf-delivery-pedidos.png",
+            alt: "Screenshot of the Leaf Delivery order center",
+            title: "Live orders"
+          },
+          {
+            image: "./media/leaf-delivery-kds.png",
+            alt: "Screenshot of the Leaf Delivery kitchen KDS",
+            title: "Kitchen KDS"
+          },
+          {
+            image: "./media/leaf-delivery-storefront.png",
+            alt: "Screenshot of the Leaf Delivery mobile storefront with cart",
+            title: "Mobile storefront"
+          },
+          {
+            image: "./media/leaf-delivery-whatsapp.png",
+            alt: "Screenshot of the Leaf Delivery WhatsApp inbox",
+            title: "WhatsApp inbox"
+          }
+        ]
+      },
+      {
+        title: "LeafDFe",
+        eyebrow: "Tax SaaS",
+        summary:
+          "Tax SaaS for moving Brazilian fiscal-document lookup, manifestation and storage out of manual routines, with billing, authentication and multi-company workflows in the same flow.",
+        points: [
+          "SEFAZ lookups and manifestation for NF-e, CT-e and MDF-e.",
+          "XML and DANFE downloads, cloud storage, reports and multi-company operation.",
+          "Checkout, authentication, Redis, Prisma and Cloudflare R2 connected inside the product."
+        ],
+        stack: ["Next.js", "React", "TypeScript", "Prisma", "Clerk", "Upstash Redis", "Cloudflare R2", "AbacatePay", "SEFAZ"],
+        link: { label: "leafdfe.com.br", href: "https://www.leafdfe.com.br/" },
+        images: [
+          {
+            image: "./media/leaf-dashboard.png",
+            alt: "Screenshot of the LeafDFe dashboard",
+            title: "Tax dashboard"
+          },
+          {
+            image: "./media/leaf-documentos.png",
+            alt: "Screenshot of the LeafDFe document list",
+            title: "Fiscal documents"
+          },
+          {
+            image: "./media/leaf-multiempresas.png",
+            alt: "Screenshot of the LeafDFe units and certificates view",
+            title: "Multi-company"
+          },
+          {
+            image: "./media/leaf-relatorios.png",
+            alt: "Screenshot of LeafDFe reports",
+            title: "Reports"
+          }
+        ]
+      }
+    ],
     projectsSection: {
       eyebrow: "Selected work",
       title: "Five projects that show where I add the most value.",
@@ -962,6 +1080,23 @@ function renderStackTag(name) {
   `;
 }
 
+function renderCaseSlideshow(items, label) {
+  return `
+    <div class="case-slideshow" aria-label="${label}">
+      ${items
+        .map(
+          (item, index) => `
+            <figure class="case-slide" style="--slide-index: ${index};">
+              <img src="${item.image}" alt="${item.alt}" loading="lazy" />
+              <figcaption>${item.title}</figcaption>
+            </figure>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+}
+
 function updateDocumentMeta(content) {
   document.documentElement.lang = content.meta.htmlLang;
   document.title = content.meta.title;
@@ -1011,11 +1146,6 @@ function applyStaticCopy(content) {
 
   setText("#feature-eyebrow", content.feature.eyebrow);
   setText("#feature-title", content.feature.title);
-  setHTML("#feature-paragraph-1", content.feature.paragraph1);
-  setHTML("#feature-paragraph-2", content.feature.paragraph2);
-  setText("#feature-card-title", content.feature.cardTitle);
-  setText("#feature-link-title", content.feature.linkTitle);
-  setText("#feature-link-note", content.feature.linkNote);
 
   setText("#evidence-eyebrow", content.evidence.eyebrow);
   setText("#evidence-title", content.evidence.title);
@@ -1072,6 +1202,35 @@ function renderProfileMeta(content) {
 
 function renderFeatureList(content) {
   renderSimpleList("#feature-card-list", content.feature.cardItems);
+}
+
+function renderFeatureCases(content) {
+  const container = document.querySelector("#feature-cases");
+  if (!container) return;
+
+  container.innerHTML = content.featureCases
+    .map(
+      (featureCase) => `
+        <article class="feature-case" data-reveal>
+          ${renderCaseSlideshow(featureCase.images, `${featureCase.title} slideshow`)}
+          <div class="feature-case__body">
+            <p class="feature-case__eyebrow">${featureCase.eyebrow}</p>
+            <h3>${featureCase.title}</h3>
+            <p class="feature-case__summary">${featureCase.summary}</p>
+            <ul class="feature-case__points">
+              ${featureCase.points.map((point) => `<li>${point}</li>`).join("")}
+            </ul>
+            <div class="feature-case__stack">
+              ${featureCase.stack.map(renderStackTag).join("")}
+            </div>
+            <a class="feature-case__link" href="${featureCase.link.href}" target="_blank" rel="noreferrer">
+              ${featureCase.link.label}
+            </a>
+          </div>
+        </article>
+      `
+    )
+    .join("");
 }
 
 function renderHeroStats(content) {
@@ -1169,10 +1328,11 @@ function renderGallery(content) {
   const container = document.querySelector("#gallery-grid");
   if (!container) return;
 
-  const featured = content.galleryItems.slice(0, 4);
-  const proofs = content.galleryItems.slice(4);
+  const deliverySlides = content.galleryItems.filter((item) => item.label === "Leaf Delivery");
+  const dfeSlides = content.galleryItems.filter((item) => item.label === "LeafDFe");
+  const proofs = content.galleryItems.filter((item) => !["Leaf Delivery", "LeafDFe"].includes(item.label));
 
-  const renderItems = (items) =>
+  const renderProofs = (items) =>
     items
       .map(
         (item) => `
@@ -1191,11 +1351,22 @@ function renderGallery(content) {
       .join("");
 
   container.innerHTML = `
-    <div class="gallery-cluster gallery-cluster--featured">
-      ${renderItems(featured)}
-    </div>
+    <article class="gallery-showcase" data-reveal>
+      <div class="gallery-showcase__head">
+        <p>Leaf Delivery</p>
+        <span>delivery / operação</span>
+      </div>
+      ${renderCaseSlideshow(deliverySlides, "Leaf Delivery slideshow")}
+    </article>
+    <article class="gallery-showcase" data-reveal>
+      <div class="gallery-showcase__head">
+        <p>LeafDFe</p>
+        <span>fiscal / SaaS</span>
+      </div>
+      ${renderCaseSlideshow(dfeSlides, "LeafDFe slideshow")}
+    </article>
     <div class="gallery-cluster gallery-cluster--proofs">
-      ${renderItems(proofs)}
+      ${renderProofs(proofs)}
     </div>
   `;
 }
@@ -1298,6 +1469,7 @@ function renderApp() {
   renderIdentityList(content);
   renderProfileMeta(content);
   renderFeatureList(content);
+  renderFeatureCases(content);
   renderHeroStats(content);
   renderHeroStacks();
   renderProjects(content);
