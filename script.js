@@ -1,6 +1,6 @@
 const iconMap = {
-  "Next.js 16": { slug: "nextdotjs", color: "111827", short: "NX" },
-  "React 19": { slug: "react", color: "2C6636", short: "RC" },
+  "Next.js": { slug: "nextdotjs", color: "111827", short: "NX" },
+  React: { slug: "react", color: "2C6636", short: "RC" },
   TypeScript: { slug: "typescript", color: "3178C6", short: "TS" },
   Prisma: { slug: "prisma", color: "111827", short: "PR" },
   Clerk: { src: "./media/icons/stack-clerk.svg", short: "CL" },
@@ -36,12 +36,17 @@ const iconMap = {
   SQL: { short: "DB" },
   Vitest: { slug: "vitest", color: "6E9F18", short: "VT" },
   Vercel: { slug: "vercel", color: "111827", short: "VC" },
-  GitHub: { slug: "github", color: "111827", short: "GH" }
+  GitHub: { slug: "github", color: "111827", short: "GH" },
+  "Google Cloud": { slug: "googlecloud", color: "4285F4", short: "GC" },
+  Zod: { slug: "zod", color: "3E67B1", short: "ZD" },
+  SWR: { short: "SW" },
+  "Evolution API": { short: "WA" },
+  iFood: { short: "IF" }
 };
 
 const sharedHeroStacks = [
-  "Next.js 16",
-  "React 19",
+  "Next.js",
+  "React",
   "TypeScript",
   "Prisma",
   "Clerk",
@@ -50,18 +55,20 @@ const sharedHeroStacks = [
 ];
 
 const sharedStackWall = [
-  "Next.js 16",
-  "React 19",
+  "Next.js",
+  "React",
   "TypeScript",
   "Node.js",
   "Python 3.10+",
   "PostgreSQL",
   "Prisma",
   "Redis",
+  "Google Cloud",
   "Git",
   "Vercel",
   "Cloudflare R2",
-  "FastAPI"
+  "FastAPI",
+  "Vitest"
 ];
 
 const localeContent = {
@@ -70,7 +77,7 @@ const localeContent = {
       htmlLang: "pt-BR",
       title: "Guilherme Bezzuoli Ramos | Portfólio",
       description:
-        "Portfólio de Guilherme Bezzuoli Ramos: SaaS, automação, integrações e interfaces operacionais para produtos web."
+        "Portfólio de Guilherme Bezzuoli Ramos: SaaS, delivery white-label, automação, integrações e interfaces operacionais para produtos web."
     },
     nav: {
       projects: "Projetos",
@@ -85,26 +92,26 @@ const localeContent = {
       projects: "Projetos",
       stack: "Negócio & Stack",
       contact: "Contato",
-      footer: "Disponível para produto, automação e processos."
+      footer: "Trabalho com produto, automação e sistema que precisa rodar de verdade."
     },
     hero: {
       eyebrow: "Portfólio técnico / GitHub Pages / 2026",
-      title: "Produto, automação e interface com lastro técnico.",
+      title: "Eu construo SaaS e ferramentas internas para operação real.",
       lede:
-        "Sou <strong>Guilherme Bezzuoli Ramos</strong>, desenvolvedor full-stack com base em ERP, análise de processos, requisitos e desenvolvimento web. Meu trabalho mistura SaaS, integrações, automação e interface operacional para reduzir retrabalho e dar mais clareza ao negócio.",
-      manifestoTitle: "Direção visual desta página",
+        "Sou <strong>Guilherme Bezzuoli Ramos</strong>, desenvolvedor full-stack com bagagem em ERP, processos, requisitos e desenvolvimento web. Gosto de pegar fluxo confuso, organizar regra de negócio, integrar serviço e entregar interface que o time realmente usa no dia a dia.",
+      manifestoTitle: "Visual da página",
       manifestoText:
-        "Paleta inspirada no LeafDFe, com contraste seco, blocos estruturais e curvas que puxam para um modernismo brasileiro mais arquitetônico.",
+        "A base visual veio do LeafDFe. Quis uma página mais seca, com blocos fortes e curvas pontuais, sem cair naquela cara de template.",
       ctaProjects: "Ver projetos",
       ctaLeaf: "Ver LeafDFe",
       identity: ["23 anos", "Brasileiro", "Português fluente", "Inglês conversacional"],
       ribbonEyebrow: "Brasil / São Paulo",
       ribbonText:
-        "Base local com repertório em ERP, processos, produto e operação web."
+        "Trabalho a partir de São Paulo, com experiência prática em ERP, operação e produto web."
     },
     profile: {
       label: "Foto de perfil",
-      role: "Full-stack para SaaS, ERP, processos e automação operacional.",
+      role: "Full-stack com foco em SaaS, integrações e rotina operacional.",
       meta: ["Brasil / São Paulo", "guilhermebezzuoli@gmail.com", "+55 11 94522-0435"],
       emailLabel: "Falar por e-mail",
       cvLabel: "Baixar CV",
@@ -113,52 +120,52 @@ const localeContent = {
     panel: {
       kicker: "Projeto principal em produção",
       text:
-        "SaaS fiscal para captura, manifestação, consulta e armazenamento de documentos eletrônicos, com checkout, API REST e operação multi-tenant."
+        "SaaS fiscal para captura, manifestação, consulta e armazenamento de documentos eletrônicos, com checkout, API REST e operação multiempresa."
     },
     feature: {
       eyebrow: "Case principal",
-      title: "LeafDFe é o melhor retrato do tipo de produto que eu gosto de construir.",
+      title: "LeafDFe resume bem o tipo de problema que eu gosto de pegar.",
       paragraph1:
-        "O LeafDFe consolida frontend, backend, regras fiscais, autenticação, billing, armazenamento seguro e automações de operação em um único produto. No código local, a stack está organizada sobre <strong>Next.js 16</strong>, <strong>React 19</strong>, <strong>TypeScript</strong>, <strong>Prisma</strong>, <strong>Clerk</strong>, <strong>Upstash Redis</strong> e <strong>Cloudflare R2</strong>.",
+        "No LeafDFe eu junto frontend, backend, regra fiscal, autenticação, cobrança e armazenamento no mesmo produto. A base atual usa <strong>Next.js</strong>, <strong>React</strong>, <strong>TypeScript</strong>, <strong>Prisma</strong>, <strong>Clerk</strong>, <strong>Upstash Redis</strong> e <strong>Cloudflare R2</strong>.",
       paragraph2:
-        "O foco do produto é tirar o fiscal do modo manual: consulta na SEFAZ, manifestação em lote, download de XML e DANFE, multiempresa, armazenamento em nuvem e checkout pronto para crescimento comercial.",
-      cardTitle: "O que entra nesse case",
+        "O objetivo sempre foi simples: tirar o fiscal do trabalho manual. Isso inclui consulta na SEFAZ, manifestação em lote, download de XML e DANFE, multiempresa, armazenamento em nuvem e um checkout que não atrapalha a venda.",
+      cardTitle: "O que esse case mostra",
       cardItems: [
-        "Integrações fiscais e rotinas SEFAZ",
-        "Checkout e endurecimento de fluxo comercial",
-        "Arquitetura multi-tenant e armazenamento seguro",
-        "UI operacional para documentos, sincronização e auditoria"
+        "Integração com SEFAZ sem depender de rotina manual",
+        "Checkout e cobrança encaixados no produto",
+        "Arquitetura multiempresa com guarda segura de documentos",
+        "Interface pensada para operador, não só para demo"
       ],
       linkTitle: "Link público",
       linkNote: "Produto ao vivo com posicionamento SaaS para NF-e, CT-e e MDF-e."
     },
     evidence: {
-      eyebrow: "Evidências visuais",
-      title: "Produto real, atividade real, interface real.",
-      copy: "LeafDFe em destaque, com recortes complementares de produto e atividade pública."
+      eyebrow: "Recortes reais",
+      title: "Produto publicado, interface em uso e atividade pública.",
+      copy: "Aqui eu mostro o LeafDFe e alguns recortes que ajudam a provar autoria e consistência."
     },
     projectsSection: {
       eyebrow: "Projetos selecionados",
-      title: "Quatro trabalhos que mostram produto, arquitetura e execução.",
+      title: "Cinco projetos que mostram onde eu agrego mais valor.",
       copy:
-        "Alguns destes projetos vivem em ambientes privados ou internos. Por isso, o foco aqui está no problema resolvido, na stack e nas decisões de implementação."
+        "Nem tudo pode ficar público. Então preferi explicar o problema, a decisão técnica e o tipo de entrega, em vez de encher a página de descrição genérica."
     },
     businessSection: {
       eyebrow: "Negócio e processo",
-      title: "Experiência aplicada em ERP, dados, requisitos e fluxo operacional."
+      title: "Experiência prática com ERP, dados, requisitos e operação."
     },
     stackSection: {
-      eyebrow: "Stack validada no workspace",
-      title: "Tecnologias que aparecem de verdade nos projetos acima."
+      eyebrow: "Stack no código",
+      title: "Ferramentas que aparecem nos projetos acima sem inflar lista."
     },
     contactSection: {
       eyebrow: "Contato",
-      title: "Aberto para conversar sobre produto, frontend, integrações e automação.",
+      title: "Se quiser conversar sobre produto, frontend ou automação, estou por aqui.",
       copy:
-        "Se fizer sentido para a vaga, o melhor caminho é falar comigo por e-mail, telefone ou olhar meus perfis e materiais públicos. O portfólio foi montado para ser direto e fácil de compartilhar em processo seletivo."
+        "E-mail ainda é o canal mais fácil. Também deixei telefone, GitHub, LinkedIn e CV para quem quiser validar contexto antes de falar comigo."
     },
     footer: {
-      copy: "Portfolio estático pronto para publicar no GitHub Pages."
+      copy: "Portfólio estático publicado no GitHub Pages."
     },
     langToggle: {
       label: "EN / Intl",
@@ -173,27 +180,52 @@ const localeContent = {
       profileImage: "Foto de perfil de Guilherme Bezzuoli Ramos"
     },
     stats: [
-      { value: "4", label: "projetos destacados" },
+      { value: "5", label: "projetos destacados" },
       { value: "ERP + SaaS", label: "negócio e produto" },
       { value: "2", label: "graduações em andamento" },
       { value: "PT-BR / EN", label: "idiomas de trabalho" }
     ],
     projects: [
       {
+        title: "Leaf Delivery",
+        tone: "accent",
+        status: "Em produção",
+        meta: "SaaS white-label / Next.js + Prisma + PostgreSQL",
+        summary:
+          "Plataforma white-label para restaurante, adega e operação local vender pelo próprio canal sem perder pedido entre WhatsApp, balcão, cozinha e entrega.",
+        highlights: [
+          "Storefront, checkout, tracking público, QR de mesa, garçom, comandas e KDS no mesmo fluxo.",
+          "Integrações operacionais com WhatsApp/Evolution, iFood, PIX Abacate Pay, cupons, estoque e receitas.",
+          "Admin tenant e admin geral com permissões, multiunidade, planos comerciais e trilha de operação real."
+        ],
+        stack: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Prisma",
+          "PostgreSQL",
+          "Vitest",
+          "AbacatePay",
+          "Evolution API",
+          "iFood"
+        ],
+        links: [{ label: "Produto ao vivo", href: "https://leafdelivery.com.br/" }]
+      },
+      {
         title: "LeafDFe",
         tone: "brand",
         status: "Em produção",
         meta: "SaaS fiscal / Next.js + Prisma + integrações",
         summary:
-          "Plataforma para captura, consulta, manifestação e armazenamento de DF-e, com billing, autenticação e operação multiempresa.",
+          "SaaS fiscal que centraliza consulta, manifestação e guarda de DF-e para reduzir rotina manual no time fiscal.",
         highlights: [
-          "Automação SEFAZ para NF-e, CT-e e MDF-e.",
-          "Checkout com AbacatePay, fluxo comercial endurecido e páginas públicas.",
+          "Consulta e manifestação na SEFAZ para NF-e, CT-e e MDF-e.",
+          "Checkout com AbacatePay ligado ao produto e às páginas públicas.",
           "Arquitetura multi-tenant com Clerk, Redis, Prisma e Cloudflare R2."
         ],
         stack: [
-          "Next.js 16",
-          "React 19",
+          "Next.js",
+          "React",
           "TypeScript",
           "Prisma",
           "Clerk",
@@ -205,18 +237,18 @@ const localeContent = {
       {
         title: "War Room",
         tone: "paper",
-        status: "Produto visual / geointelligence",
+        status: "Produto visual / geointeligência",
         meta: "Mapas interativos / Next.js + MapLibre + deck.gl",
         summary:
-          "Aplicação web geopolítica com mapa interativo, timeline editorial, camadas de facções e APIs públicas de leitura.",
+          "Projeto de mapas interativos feito para leitura rápida de contexto geopolítico, com camadas densas e timeline editorial.",
         highlights: [
-          "Frontend com shell visual forte para leitura operacional.",
-          "Camada server-side tipada pronta para trocar o backend in-memory por Postgres/PostGIS.",
-          "Filtros, busca, timeline e painéis de detalhe integrados à experiência."
+          "Frontend desenhado para leitura densa, sem esconder informação importante.",
+          "Camada server-side tipada pronta para sair do in-memory e ir para Postgres/PostGIS.",
+          "Filtros, busca, timeline e painéis de detalhe no mesmo fluxo."
         ],
         stack: [
-          "Next.js 16",
-          "React 19",
+          "Next.js",
+          "React",
           "TypeScript",
           "Tailwind CSS",
           "MapLibre",
@@ -231,11 +263,11 @@ const localeContent = {
         status: "Arquitetura algorítmica",
         meta: "Python / FastAPI / execução paper e live",
         summary:
-          "Bot autônomo para prediction markets com arquitetura paper e live, controles de risco, persistência de eventos e endpoints operacionais.",
+          "Bot para prediction markets com modos paper e live, controles de risco, persistência de eventos e endpoints de operação.",
         highlights: [
-          "Loop de arbitragem paper com scoring, risco e simulação de fills.",
-          "Estrutura para market making com inventário, quote generation e supervisor.",
-          "APIs para analytics, wallet, health e operação em tempo real."
+          "Loop paper de arbitragem com scoring, risco e simulação de fills.",
+          "Base para market making com inventário, geração de quotes e supervisor.",
+          "APIs para analytics, wallet, health check e operação em tempo real."
         ],
         stack: ["Python 3.10+", "FastAPI", "Uvicorn", "JSONL/SQLite", "Event store", "unittest"],
         links: []
@@ -246,17 +278,31 @@ const localeContent = {
         status: "Ferramenta interna de IA",
         meta: "React + Vite + Express + SQLite + Gemini",
         summary:
-          "Sistema interno com geração de tickets, transcrição de áudio, integração com Redmine e ambientes beta e produção separados.",
+          "Ferramenta interna para abrir ticket a partir de áudio e texto, com integração ao Redmine e ambientes beta e produção separados.",
         highlights: [
-          "Frontend React 19 com identidade visual própria e operação em tempo real.",
+          "Interface em React/Vite feita para uso interno contínuo.",
           "Backend Express com autenticação, rate limit, Socket.io e persistência em SQLite.",
-          "Fluxo orientado a processo interno com IA e integração corporativa."
+          "Fluxo ligado a processo interno, IA e ferramenta corporativa."
         ],
-        stack: ["React 19", "TypeScript", "Vite", "Express", "SQLite", "Socket.io", "Gemini"],
+        stack: ["React", "TypeScript", "Vite", "Express", "SQLite", "Socket.io", "Gemini"],
         links: []
       }
     ],
     galleryItems: [
+      {
+        label: "Leaf Delivery",
+        title: "Central de pedidos para operação ao vivo",
+        image: "./media/leaf-delivery-pedidos.png",
+        alt: "Screenshot da central de pedidos do Leaf Delivery",
+        fileHint: "leafdelivery / pedidos"
+      },
+      {
+        label: "Leaf Delivery",
+        title: "KDS de cozinha e fila de preparo",
+        image: "./media/leaf-delivery-kds.png",
+        alt: "Screenshot da tela de cozinha KDS do Leaf Delivery",
+        fileHint: "leafdelivery / cozinha"
+      },
       {
         label: "LeafDFe",
         title: "Dashboard fiscal com visão operacional",
@@ -270,6 +316,20 @@ const localeContent = {
         image: "./media/leaf-documentos.png",
         alt: "Screenshot da tela de documentos fiscais do LeafDFe",
         fileHint: "leafdfe / documentos"
+      },
+      {
+        label: "Leaf Delivery",
+        title: "Storefront mobile com carrinho",
+        image: "./media/leaf-delivery-storefront.png",
+        alt: "Screenshot do storefront mobile do Leaf Delivery com carrinho",
+        fileHint: "leafdelivery / storefront"
+      },
+      {
+        label: "Leaf Delivery",
+        title: "Inbox WhatsApp dentro da operação",
+        image: "./media/leaf-delivery-whatsapp.png",
+        alt: "Screenshot da inbox WhatsApp do Leaf Delivery",
+        fileHint: "leafdelivery / whatsapp"
       },
       {
         label: "LeafDFe",
@@ -311,36 +371,36 @@ const localeContent = {
       {
         title: "ERP, fluxo e regra de negócio",
         description:
-          "Base prática em ERP e rotinas corporativas, conectando regra de negócio, operação, validação funcional e melhoria contínua de processo."
+          "Já trabalhei perto de rotina corporativa de verdade, então costumo pensar em exceção, conferência e gargalo antes de pensar só na tela."
       },
       {
         title: "Dados, saídas e produtividade",
         description:
-          "Experiência com SQL, PostgreSQL, exportações CSV, relatórios e saídas que ajudam conferência, tomada de decisão e redução de retrabalho."
+          "Relatório, CSV e consulta precisam ajudar alguém a decidir ou conferir alguma coisa. Tento manter esse critério em tudo que entrego."
       },
       {
         title: "Requisitos e documentação funcional",
         description:
-          "Levanto necessidade, traduzo processo, documento comportamento esperado e ajudo a levar demanda do contexto de negócio até a entrega."
+          "Consigo puxar demanda do time de negócio, organizar regra e transformar isso em escopo implementável sem enrolação."
       },
       {
         title: "Formação híbrida",
         description:
-          "Cursando Administração e Sistemas de Informação, com leitura técnica e visão de negócio no mesmo eixo para construir produto que faça sentido operacional."
+          "Estou cursando Administração e Sistemas de Informação. Isso ajuda a discutir produto sem perder o detalhe técnico."
       }
     ],
     stackGroups: [
       {
         label: "Frontend",
-        items: ["React 19", "Next.js 16", "TypeScript", "Vite", "Tailwind CSS", "MapLibre", "deck.gl"]
+        items: ["React", "Next.js", "TypeScript", "Vite", "Tailwind CSS", "MapLibre", "deck.gl", "SWR"]
       },
       {
         label: "Backend e dados",
-        items: ["Node.js", "Express", "Python", "FastAPI", "Prisma", "SQLite", "PostgreSQL", "Redis"]
+        items: ["Node.js", "Express", "Python", "FastAPI", "Prisma", "SQLite", "PostgreSQL", "Redis", "Zod"]
       },
       {
         label: "Plataforma e integrações",
-        items: ["Clerk", "Cloudflare R2", "Socket.io", "AbacatePay", "SEFAZ", "Gemini", "Redmine"]
+        items: ["Clerk", "Google Cloud", "Cloudflare R2", "Socket.io", "AbacatePay", "SEFAZ", "Evolution API", "iFood", "Gemini", "Redmine"]
       }
     ],
     contactLinks: [
@@ -364,7 +424,7 @@ const localeContent = {
         label: "GitHub / produtos",
         value: "github.com/ramosbezzu",
         href: "https://github.com/ramosbezzu",
-        description: "Perfil útil para repositórios, produtos e código publicado com foco em entrega.",
+        description: "Perfil para ver produtos, repositórios e código publicado.",
         newTab: true,
         tier: "secondary"
       },
@@ -372,15 +432,23 @@ const localeContent = {
         label: "GitHub / atividade",
         value: "github.com/gbezzuoli",
         href: "https://github.com/gbezzuoli",
-        description: "Perfil que ajuda a mostrar atividade, contribuições e estatísticas de código.",
+        description: "Perfil focado em atividade, contribuições e consistência de código.",
         newTab: true,
         tier: "secondary"
       },
       {
-        label: "Case principal",
+        label: "Case delivery",
+        value: "leafdelivery.com.br",
+        href: "https://leafdelivery.com.br/",
+        description: "SaaS white-label em produção para delivery, salão, cozinha, WhatsApp, iFood, PIX e estoque.",
+        newTab: true,
+        tier: "secondary"
+      },
+      {
+        label: "Case fiscal",
         value: "leafdfe.com.br",
         href: "https://www.leafdfe.com.br/",
-        description: "Produto público que concentra meu trabalho mais completo em SaaS operacional.",
+        description: "Produto público que melhor representa meu trabalho em software operacional.",
         newTab: true,
         tier: "secondary"
       },
@@ -388,7 +456,7 @@ const localeContent = {
         label: "LinkedIn",
         value: "linkedin.com/in/gbzramos",
         href: "https://linkedin.com/in/gbzramos",
-        description: "Perfil profissional para histórico, networking e contexto de carreira.",
+        description: "Perfil profissional com histórico e contexto de carreira.",
         newTab: true,
         tier: "secondary"
       },
@@ -415,7 +483,7 @@ const localeContent = {
       htmlLang: "en",
       title: "Guilherme Bezzuoli Ramos | Portfolio",
       description:
-        "Portfolio of Guilherme Bezzuoli Ramos: SaaS, workflow automation, integrations and operational interfaces for web products."
+        "Portfolio of Guilherme Bezzuoli Ramos: SaaS, white-label delivery, workflow automation, integrations and operational interfaces for web products."
     },
     nav: {
       projects: "Projects",
@@ -430,26 +498,26 @@ const localeContent = {
       projects: "Projects",
       stack: "Business & Stack",
       contact: "Contact",
-      footer: "Available for product engineering, automation and workflow-heavy systems."
+      footer: "I work on product, automation and systems that need to hold up in real operations."
     },
     hero: {
       eyebrow: "Engineering portfolio / GitHub Pages / 2026",
-      title: "Product engineering, workflow automation and interfaces with operational depth.",
+      title: "I build SaaS products and internal tools for real operations.",
       lede:
-        "I'm <strong>Guilherme Bezzuoli Ramos</strong>, a full-stack developer with hands-on experience in ERP workflows, process analysis, requirements and web product delivery. My work combines SaaS, integrations, automation and operational UI to reduce friction and give teams clearer business flows.",
-      manifestoTitle: "Visual direction",
+        "I'm <strong>Guilherme Bezzuoli Ramos</strong>, a full-stack developer with hands-on experience in ERP workflows, process analysis, requirements and web delivery. I like taking messy flows, turning business rules into working software and shipping interfaces people actually use every day.",
+      manifestoTitle: "Page visual",
       manifestoText:
-        "A color system influenced by LeafDFe, using dry contrast, structural blocks and curves inspired by Brazilian modernism.",
+        "The visual system came from LeafDFe. I wanted a drier page with strong blocks and a few curves, without falling into generic portfolio styling.",
       ctaProjects: "See projects",
       ctaLeaf: "Open LeafDFe",
       identity: ["23 years old", "Brazil-based", "Native Portuguese", "Conversational English"],
       ribbonEyebrow: "Brazil / Sao Paulo",
       ribbonText:
-        "Brazil-based developer with hands-on experience in ERP operations, product delivery and business-facing web systems."
+        "Based in Sao Paulo, with practical experience in ERP operations, business systems and web products."
     },
     profile: {
       label: "Profile",
-      role: "Full-stack builder for SaaS, business systems and workflow automation.",
+      role: "Full-stack builder focused on SaaS, integrations and operational workflows.",
       meta: ["Brazil / Sao Paulo", "guilhermebezzuoli@gmail.com", "+55 11 94522-0435"],
       emailLabel: "Email me",
       cvLabel: "Download resume",
@@ -458,52 +526,52 @@ const localeContent = {
     panel: {
       kicker: "Flagship product in production",
       text:
-        "Tax SaaS for ingestion, manifestation, lookup and storage of electronic fiscal documents, with checkout, REST APIs and multi-tenant workflows."
+        "Tax SaaS for ingestion, manifestation, lookup and storage of electronic fiscal documents, with checkout, REST APIs and multi-company workflows."
     },
     feature: {
-      eyebrow: "Flagship case",
-      title: "LeafDFe is the clearest example of the kind of product I like to build.",
+      eyebrow: "Main case",
+      title: "LeafDFe is the clearest example of the kind of problem I like working on.",
       paragraph1:
-        "LeafDFe brings frontend, backend, tax workflows, authentication, billing, secure storage and operational automation into a single product. In the local codebase, the stack is centered on <strong>Next.js 16</strong>, <strong>React 19</strong>, <strong>TypeScript</strong>, <strong>Prisma</strong>, <strong>Clerk</strong>, <strong>Upstash Redis</strong> and <strong>Cloudflare R2</strong>.",
+        "LeafDFe brings frontend, backend, tax workflows, authentication, billing and secure storage into the same product. The current base uses <strong>Next.js</strong>, <strong>React</strong>, <strong>TypeScript</strong>, <strong>Prisma</strong>, <strong>Clerk</strong>, <strong>Upstash Redis</strong> and <strong>Cloudflare R2</strong>.",
       paragraph2:
-        "The business goal is straightforward: take fiscal operations out of spreadsheets and inboxes. The product supports SEFAZ lookups, batch manifestation, XML and DANFE downloads, multi-company management, cloud storage and a checkout flow ready for commercial growth.",
-      cardTitle: "What this case shows",
+        "The goal was always simple: get fiscal work out of manual mode. That means SEFAZ lookups, batch manifestation, XML and DANFE downloads, multi-company management, cloud storage and a checkout flow that does not get in the way.",
+      cardTitle: "What this case proves",
       cardItems: [
-        "Tax integrations and SEFAZ-heavy workflows",
-        "Checkout, acquisition pages and hardened commercial flow",
+        "SEFAZ-heavy flows without manual busywork",
+        "Checkout and billing inside the product",
         "Multi-tenant architecture with secure document storage",
-        "Operational UI for documents, sync status and auditability"
+        "Operational UI built for daily use, not for screenshots"
       ],
       linkTitle: "Public link",
       linkNote: "Live SaaS product for NF-e, CT-e and MDF-e workflows."
     },
     evidence: {
-      eyebrow: "Visual proof",
-      title: "Real product, real activity, real interface.",
-      copy: "LeafDFe leads the section, with supporting proof from product work and public GitHub activity."
+      eyebrow: "Real proof",
+      title: "Published product, live interface and public activity.",
+      copy: "This section shows LeafDFe first, then a few supporting pieces that help prove authorship and consistency."
     },
     projectsSection: {
       eyebrow: "Selected work",
-      title: "Four projects that show product thinking, architecture and delivery.",
+      title: "Five projects that show where I add the most value.",
       copy:
-        "Some of these products live in private or internal environments. The focus here is the business problem, the implementation choices and the stack behind the delivery."
+        "Not everything can be public. So I focused on the problem, the technical choices and the kind of delivery behind each project instead of padding the page with generic copy."
     },
     businessSection: {
       eyebrow: "Business context",
-      title: "Hands-on experience with ERP workflows, data outputs, requirements and operational delivery."
+      title: "Hands-on experience with ERP workflows, data, requirements and operations."
     },
     stackSection: {
-      eyebrow: "Validated stack",
-      title: "Technologies that show up for real in the projects above."
+      eyebrow: "Stack in code",
+      title: "Tools that actually show up in the projects above."
     },
     contactSection: {
       eyebrow: "Contact",
-      title: "Open to conversations about product engineering, frontend, integrations and automation.",
+      title: "If you want to talk about product, frontend or automation, I'm available.",
       copy:
-        "If there's a fit, the fastest path is email, phone or my public profiles. This portfolio was built to be direct, shareable and easy to scan during a hiring process."
+        "Email is still the easiest way to reach me. I also left phone, GitHub, LinkedIn and both resume versions for anyone who wants more context first."
     },
     footer: {
-      copy: "Static portfolio, ready to deploy on GitHub Pages."
+      copy: "Static portfolio published on GitHub Pages."
     },
     langToggle: {
       label: "PT-BR",
@@ -518,27 +586,52 @@ const localeContent = {
       profileImage: "Profile photo of Guilherme Bezzuoli Ramos"
     },
     stats: [
-      { value: "4", label: "featured projects" },
+      { value: "5", label: "featured projects" },
       { value: "ERP + SaaS", label: "business systems" },
       { value: "2", label: "degrees in progress" },
       { value: "PT-BR / EN", label: "working languages" }
     ],
     projects: [
       {
+        title: "Leaf Delivery",
+        tone: "accent",
+        status: "Live product",
+        meta: "White-label SaaS / Next.js + Prisma + PostgreSQL",
+        summary:
+          "White-label platform for restaurants, liquor stores and local operations to sell through their own channel without losing orders across WhatsApp, counter service, kitchen and delivery.",
+        highlights: [
+          "Storefront, checkout, public tracking, table QR, waiter flow, tabs and KDS kept in one operational loop.",
+          "Operational integrations with WhatsApp/Evolution, iFood, Abacate Pay PIX, coupons, inventory and recipes.",
+          "Tenant admin and platform admin with permissions, multi-unit operations, commercial plans and production-grade workflows."
+        ],
+        stack: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Prisma",
+          "PostgreSQL",
+          "Vitest",
+          "AbacatePay",
+          "Evolution API",
+          "iFood"
+        ],
+        links: [{ label: "Live product", href: "https://leafdelivery.com.br/" }]
+      },
+      {
         title: "LeafDFe",
         tone: "brand",
         status: "Live product",
         meta: "Tax SaaS / Next.js + Prisma + integrations",
         summary:
-          "Operational tax platform for ingestion, lookup, manifestation and storage of Brazilian electronic fiscal documents, with billing, authentication and multi-company workflows.",
+          "Tax SaaS that centralizes lookup, manifestation and storage of Brazilian fiscal documents to cut manual work from the fiscal team.",
         highlights: [
-          "SEFAZ automation for NF-e, CT-e and MDF-e.",
-          "AbacatePay checkout, hardened commercial flow and public acquisition pages.",
+          "SEFAZ lookups and manifestation for NF-e, CT-e and MDF-e.",
+          "AbacatePay checkout connected to the product and public acquisition pages.",
           "Multi-tenant architecture with Clerk, Redis, Prisma and Cloudflare R2."
         ],
         stack: [
-          "Next.js 16",
-          "React 19",
+          "Next.js",
+          "React",
           "TypeScript",
           "Prisma",
           "Clerk",
@@ -550,18 +643,18 @@ const localeContent = {
       {
         title: "War Room",
         tone: "paper",
-        status: "Product UI / geointelligence",
+        status: "Product UI / geospatial intelligence",
         meta: "Interactive mapping / Next.js + MapLibre + deck.gl",
         summary:
-          "Geopolitical web application with interactive maps, editorial timeline, faction layers and public-read APIs.",
+          "Interactive mapping project built for fast geopolitical reading, with dense layers and an editorial timeline.",
         highlights: [
-          "Frontend shell designed for operational reading and dense information.",
-          "Typed server-side layer ready to evolve from in-memory data to Postgres/PostGIS.",
-          "Filters, search, timeline and detail panels integrated into one experience."
+          "Frontend built for dense reading without hiding useful information.",
+          "Typed server-side layer ready to move from in-memory data to Postgres/PostGIS.",
+          "Filters, search, timeline and detail panels kept in one flow."
         ],
         stack: [
-          "Next.js 16",
-          "React 19",
+          "Next.js",
+          "React",
           "TypeScript",
           "Tailwind CSS",
           "MapLibre",
@@ -576,10 +669,10 @@ const localeContent = {
         status: "Algorithmic architecture",
         meta: "Python / FastAPI / paper and live execution",
         summary:
-          "Autonomous prediction-markets bot with paper and live architecture, risk controls, event persistence and operational endpoints.",
+          "Prediction markets bot with paper and live modes, risk controls, event persistence and operational endpoints.",
         highlights: [
           "Paper arbitrage loop with scoring, risk logic and fill simulation.",
-          "Foundation for market-making flows with inventory, quote generation and supervision.",
+          "Foundation for market-making with inventory, quote generation and supervision.",
           "APIs for analytics, wallet, health checks and real-time operation."
         ],
         stack: ["Python 3.10+", "FastAPI", "Uvicorn", "JSONL/SQLite", "Event store", "unittest"],
@@ -591,17 +684,31 @@ const localeContent = {
         status: "Internal AI workflow tool",
         meta: "React + Vite + Express + SQLite + Gemini",
         summary:
-          "Internal operations assistant with audio transcription, ticket generation, Redmine integration and separate beta and production environments.",
+          "Internal tool for turning audio and text into tickets, with Redmine integration and separate beta and production environments.",
         highlights: [
-          "React 19 frontend with a distinct visual identity for internal workflows.",
+          "React/Vite interface built for repeated internal use.",
           "Express backend with authentication, rate limiting, Socket.io and SQLite persistence.",
-          "Automation-oriented flow connecting internal requests, transcription and corporate tooling."
+          "Workflow tied to internal requests, AI transcription and corporate tooling."
         ],
-        stack: ["React 19", "TypeScript", "Vite", "Express", "SQLite", "Socket.io", "Gemini"],
+        stack: ["React", "TypeScript", "Vite", "Express", "SQLite", "Socket.io", "Gemini"],
         links: []
       }
     ],
     galleryItems: [
+      {
+        label: "Leaf Delivery",
+        title: "Live order center for daily operations",
+        image: "./media/leaf-delivery-pedidos.png",
+        alt: "Screenshot of the Leaf Delivery order center",
+        fileHint: "leafdelivery / orders"
+      },
+      {
+        label: "Leaf Delivery",
+        title: "Kitchen KDS and preparation queue",
+        image: "./media/leaf-delivery-kds.png",
+        alt: "Screenshot of the Leaf Delivery kitchen KDS",
+        fileHint: "leafdelivery / kitchen"
+      },
       {
         label: "LeafDFe",
         title: "Tax dashboard with operational visibility",
@@ -615,6 +722,20 @@ const localeContent = {
         image: "./media/leaf-documentos.png",
         alt: "Screenshot of the LeafDFe document list",
         fileHint: "leafdfe / documents"
+      },
+      {
+        label: "Leaf Delivery",
+        title: "Mobile storefront with cart",
+        image: "./media/leaf-delivery-storefront.png",
+        alt: "Screenshot of the Leaf Delivery mobile storefront with cart",
+        fileHint: "leafdelivery / storefront"
+      },
+      {
+        label: "Leaf Delivery",
+        title: "WhatsApp inbox inside the operation",
+        image: "./media/leaf-delivery-whatsapp.png",
+        alt: "Screenshot of the Leaf Delivery WhatsApp inbox",
+        fileHint: "leafdelivery / whatsapp"
       },
       {
         label: "LeafDFe",
@@ -656,36 +777,36 @@ const localeContent = {
       {
         title: "ERP workflows and business rules",
         description:
-          "Hands-on experience with ERP routines and business operations, connecting business rules, functional validation and process improvement."
+          "I've worked close to real business routines, so I tend to think about edge cases, validation and bottlenecks before thinking only about the interface."
       },
       {
         title: "Data outputs and productivity",
         description:
-          "Experience with SQL, PostgreSQL, CSV exports, reports and practical outputs that help review, decision-making and rework reduction."
+          "Reports, CSV exports and queries need to help someone decide or verify something. I try to keep that standard in what I ship."
       },
       {
         title: "Requirements and functional documentation",
         description:
-          "I gather needs, translate process context, document expected behavior and help move work from business reality to shipped implementation."
+          "I can pull requirements from the business side, organize rules and turn them into implementation-ready scope without too much ceremony."
       },
       {
         title: "Hybrid academic track",
         description:
-          "Currently studying Business Administration and Information Systems, combining technical depth and business context in the same workstream."
+          "I'm studying Business Administration and Information Systems, which helps me discuss product context without losing technical detail."
       }
     ],
     stackGroups: [
       {
         label: "Frontend",
-        items: ["React 19", "Next.js 16", "TypeScript", "Vite", "Tailwind CSS", "MapLibre", "deck.gl"]
+        items: ["React", "Next.js", "TypeScript", "Vite", "Tailwind CSS", "MapLibre", "deck.gl", "SWR"]
       },
       {
         label: "Backend & data",
-        items: ["Node.js", "Express", "Python", "FastAPI", "Prisma", "SQLite", "PostgreSQL", "Redis"]
+        items: ["Node.js", "Express", "Python", "FastAPI", "Prisma", "SQLite", "PostgreSQL", "Redis", "Zod"]
       },
       {
         label: "Platform & integrations",
-        items: ["Clerk", "Cloudflare R2", "Socket.io", "AbacatePay", "SEFAZ", "Gemini", "Redmine"]
+        items: ["Clerk", "Google Cloud", "Cloudflare R2", "Socket.io", "AbacatePay", "SEFAZ", "Evolution API", "iFood", "Gemini", "Redmine"]
       }
     ],
     contactLinks: [
@@ -709,7 +830,7 @@ const localeContent = {
         label: "GitHub / products",
         value: "github.com/ramosbezzu",
         href: "https://github.com/ramosbezzu",
-        description: "Useful for repositories, products and public code with stronger delivery context.",
+        description: "Useful for public products, repositories and published code.",
         newTab: true,
         tier: "secondary"
       },
@@ -717,12 +838,20 @@ const localeContent = {
         label: "GitHub / activity",
         value: "github.com/gbezzuoli",
         href: "https://github.com/gbezzuoli",
-        description: "Helpful to show coding activity, contribution history and public consistency.",
+        description: "Helpful for showing activity, contribution history and public consistency.",
         newTab: true,
         tier: "secondary"
       },
       {
-        label: "Flagship case",
+        label: "Delivery case",
+        value: "leafdelivery.com.br",
+        href: "https://leafdelivery.com.br/",
+        description: "Live white-label SaaS for delivery, dine-in, kitchen, WhatsApp, iFood, PIX and inventory.",
+        newTab: true,
+        tier: "secondary"
+      },
+      {
+        label: "Tax case",
         value: "leafdfe.com.br",
         href: "https://www.leafdfe.com.br/",
         description: "Public SaaS product that best represents my work in operational software.",
@@ -733,7 +862,7 @@ const localeContent = {
         label: "LinkedIn",
         value: "linkedin.com/in/gbzramos",
         href: "https://linkedin.com/in/gbzramos",
-        description: "Professional timeline, background and recruiter-facing context.",
+        description: "Professional background and career context.",
         newTab: true,
         tier: "secondary"
       },
