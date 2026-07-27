@@ -777,6 +777,11 @@ h3 {
   animation-delay: calc(var(--slide-index) * 4s);
 }
 
+.case-slideshow--3 .case-slide {
+  animation-name: case-slide-cycle-3;
+  animation-duration: 12s;
+}
+
 .case-slide img {
   width: 100%;
   height: 100%;
@@ -800,7 +805,26 @@ h3 {
     transform: translateX(0);
   }
 
-  25%,
+  27%,
+  95% {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+}
+
+@keyframes case-slide-cycle-3 {
+  0%,
+  30% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  36%,
   95% {
     opacity: 0;
     transform: translateX(-16px);

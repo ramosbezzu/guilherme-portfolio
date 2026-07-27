@@ -1162,7 +1162,7 @@ function renderStackTag(name) {
 
 function renderCaseSlideshow(items, label) {
   return `
-    <div class="case-slideshow" aria-label="${label}">
+    <div class="case-slideshow case-slideshow--${items.length}" aria-label="${label}">
       ${items
         .map(
           (item, index) => `
