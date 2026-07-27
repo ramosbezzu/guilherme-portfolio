@@ -41,7 +41,10 @@ const iconMap = {
   Zod: { slug: "zod", color: "3E67B1", short: "ZD" },
   SWR: { short: "SW" },
   "Evolution API": { short: "WA" },
-  iFood: { short: "IF" }
+  iFood: { short: "IF" },
+  NestJS: { slug: "nestjs", color: "E0234E", short: "NS" },
+  BullMQ: { short: "BQ" },
+  Stripe: { slug: "stripe", color: "635BFF", short: "ST" }
 };
 
 const sharedHeroStacks = [
@@ -67,7 +70,8 @@ const sharedStackWall = [
   "Git",
   "Vercel",
   "Cloudflare R2",
-  "FastAPI",
+  "NestJS",
+  "BullMQ",
   "Vitest"
 ];
 
@@ -77,7 +81,7 @@ const localeContent = {
       htmlLang: "pt-BR",
       title: "Guilherme Bezzuoli Ramos | Portfólio",
       description:
-        "Portfólio de Guilherme Bezzuoli Ramos: SaaS, delivery white-label, automação, integrações e interfaces operacionais para produtos web."
+        "Portfólio de Guilherme Bezzuoli Ramos: SaaS de agendamento, delivery white-label, automação, integrações e interfaces operacionais."
     },
     nav: {
       projects: "Projetos",
@@ -124,14 +128,44 @@ const localeContent = {
     },
     feature: {
       eyebrow: "Cases principais",
-      title: "Leaf Delivery e LeafDFe mostram meu trabalho em produto operacional."
+      title: "Três produtos Leaf, do agendamento à operação fiscal e de delivery."
     },
     evidence: {
       eyebrow: "Recortes reais",
-      title: "Produto publicado, interface em uso e atividade pública.",
-      copy: "Os prints principais viraram slideshows para mostrar Leaf Delivery e LeafDFe sem alongar demais a página."
+      title: "Interfaces reais, fluxos operacionais e produto construído de ponta a ponta.",
+      copy: "Os recortes mostram agenda, integrações e rotinas dos três SaaS sem transformar o portfólio em uma lista de telas."
     },
     featureCases: [
+      {
+        title: "Leaf Booking",
+        eyebrow: "SaaS de agendamento multi-tenant",
+        summary:
+          "Plataforma de agendamento online para negócios de serviços, com experiência mobile para o cliente e operação diária completa para o estabelecimento.",
+        points: [
+          "Booking público em poucos passos, agenda Dia | Semana | Mês e gestão de serviços, profissionais e disponibilidade.",
+          "Arquitetura multi-tenant preparada para mercados BR e IE, com pagamentos por PIX ou Stripe conforme o país.",
+          "Notificações, lembretes e integrações de WhatsApp organizadas por tenant, com administração operacional e visão de plataforma."
+        ],
+        stack: ["Next.js", "React", "TypeScript", "NestJS", "Prisma", "PostgreSQL", "Redis", "BullMQ"],
+        link: { label: "Ver código no GitHub", href: "https://github.com/ramosbezzu/leaf-booking" },
+        images: [
+          {
+            image: "./media/leaf-booking-agenda.png",
+            alt: "Agenda diária e calendário operacional do Leaf Booking",
+            title: "Agenda operacional"
+          },
+          {
+            image: "./media/leaf-booking-whatsapp.png",
+            alt: "Configuração de mensagens e lembretes por WhatsApp no Leaf Booking",
+            title: "Automação por WhatsApp"
+          },
+          {
+            image: "./media/leaf-booking-pix.png",
+            alt: "Configuração de pagamento PIX e conciliação no Leaf Booking",
+            title: "Pagamento e conciliação PIX"
+          }
+        ]
+      },
       {
         title: "Leaf Delivery",
         eyebrow: "Delivery white-label",
@@ -205,7 +239,7 @@ const localeContent = {
     ],
     projectsSection: {
       eyebrow: "Projetos selecionados",
-      title: "Cinco projetos que mostram onde eu agrego mais valor.",
+      title: "Quatro produtos que mostram onde eu agrego mais valor.",
       copy:
         "Nem tudo pode ficar público. Então preferi explicar o problema, a decisão técnica e o tipo de entrega, em vez de encher a página de descrição genérica."
     },
@@ -239,7 +273,7 @@ const localeContent = {
       profileImage: "Foto de perfil de Guilherme Bezzuoli Ramos"
     },
     stats: [
-      { value: "5", label: "projetos destacados" },
+      { value: "4", label: "projetos destacados" },
       { value: "ERP + SaaS", label: "negócio e produto" },
       { value: "2", label: "graduações em andamento" },
       { value: "PT-BR / EN", label: "idiomas de trabalho" }
@@ -294,42 +328,29 @@ const localeContent = {
         links: [{ label: "Produto ao vivo", href: "https://www.leafdfe.com.br/" }]
       },
       {
-        title: "War Room",
+        title: "Leaf Booking",
         tone: "paper",
-        status: "Produto visual / geointeligência",
-        meta: "Mapas interativos / Next.js + MapLibre + deck.gl",
+        status: "MVP validado localmente",
+        meta: "SaaS de agendamento / Next.js + NestJS + PostgreSQL",
         summary:
-          "Projeto de mapas interativos feito para leitura rápida de contexto geopolítico, com camadas densas e timeline editorial.",
+          "Plataforma multi-tenant de agendamento para negócios de serviços, com booking público mobile e uma agenda operacional para o time.",
         highlights: [
-          "Frontend desenhado para leitura densa, sem esconder informação importante.",
-          "Camada server-side tipada pronta para sair do in-memory e ir para Postgres/PostGIS.",
-          "Filtros, busca, timeline e painéis de detalhe no mesmo fluxo."
+          "Agendamento público, disponibilidade por profissional e agenda em visualizações de dia, semana e mês.",
+          "Admin do negócio para serviços, clientes, profissionais, marca, pagamentos e notificações.",
+          "Arquitetura por mercado com PIX no Brasil, Stripe em EUR e filas BullMQ para tarefas assíncronas."
         ],
         stack: [
           "Next.js",
           "React",
           "TypeScript",
           "Tailwind CSS",
-          "MapLibre",
-          "deck.gl",
-          "zustand"
+          "NestJS",
+          "Prisma",
+          "PostgreSQL",
+          "Redis",
+          "BullMQ"
         ],
-        links: []
-      },
-      {
-        title: "BetBot",
-        tone: "ink",
-        status: "Arquitetura algorítmica",
-        meta: "Python / FastAPI / execução paper e live",
-        summary:
-          "Bot para prediction markets com modos paper e live, controles de risco, persistência de eventos e endpoints de operação.",
-        highlights: [
-          "Loop paper de arbitragem com scoring, risco e simulação de fills.",
-          "Base para market making com inventário, geração de quotes e supervisor.",
-          "APIs para analytics, wallet, health check e operação em tempo real."
-        ],
-        stack: ["Python 3.10+", "FastAPI", "Uvicorn", "JSONL/SQLite", "Event store", "unittest"],
-        links: []
+        links: [{ label: "Ver repositório", href: "https://github.com/ramosbezzu/leaf-booking" }]
       },
       {
         title: "Dispatcher",
@@ -348,6 +369,27 @@ const localeContent = {
       }
     ],
     galleryItems: [
+      {
+        label: "Leaf Booking",
+        title: "Agenda diária para uma operação com múltiplos profissionais",
+        image: "./media/leaf-booking-agenda.png",
+        alt: "Agenda diária e calendário operacional do Leaf Booking",
+        fileHint: "leaf booking / agenda"
+      },
+      {
+        label: "Leaf Booking",
+        title: "Automação de confirmações e lembretes por WhatsApp",
+        image: "./media/leaf-booking-whatsapp.png",
+        alt: "Configuração de mensagens e lembretes por WhatsApp no Leaf Booking",
+        fileHint: "leaf booking / whatsapp"
+      },
+      {
+        label: "Leaf Booking",
+        title: "Configuração de PIX, webhook e conciliação",
+        image: "./media/leaf-booking-pix.png",
+        alt: "Configuração de pagamento PIX e conciliação no Leaf Booking",
+        fileHint: "leaf booking / pagamentos"
+      },
       {
         label: "Leaf Delivery",
         title: "Central de pedidos para operação ao vivo",
@@ -451,15 +493,15 @@ const localeContent = {
     stackGroups: [
       {
         label: "Frontend",
-        items: ["React", "Next.js", "TypeScript", "Vite", "Tailwind CSS", "MapLibre", "deck.gl", "SWR"]
+        items: ["React", "Next.js", "TypeScript", "Vite", "Tailwind CSS", "SWR"]
       },
       {
         label: "Backend e dados",
-        items: ["Node.js", "Express", "Python", "FastAPI", "Prisma", "SQLite", "PostgreSQL", "Redis", "Zod"]
+        items: ["Node.js", "Express", "NestJS", "BullMQ", "Prisma", "SQLite", "PostgreSQL", "Redis", "Zod"]
       },
       {
         label: "Plataforma e integrações",
-        items: ["Clerk", "Google Cloud", "Cloudflare R2", "Socket.io", "AbacatePay", "SEFAZ", "Evolution API", "iFood", "Gemini", "Redmine"]
+        items: ["Clerk", "Google Cloud", "Cloudflare R2", "Socket.io", "AbacatePay", "Stripe", "SEFAZ", "Evolution API", "iFood", "Gemini", "Redmine"]
       }
     ],
     contactLinks: [
@@ -542,7 +584,7 @@ const localeContent = {
       htmlLang: "en",
       title: "Guilherme Bezzuoli Ramos | Portfolio",
       description:
-        "Portfolio of Guilherme Bezzuoli Ramos: SaaS, white-label delivery, workflow automation, integrations and operational interfaces for web products."
+        "Portfolio of Guilherme Bezzuoli Ramos: booking SaaS, white-label delivery, workflow automation, integrations and operational interfaces."
     },
     nav: {
       projects: "Projects",
@@ -589,14 +631,44 @@ const localeContent = {
     },
     feature: {
       eyebrow: "Main cases",
-      title: "Leaf Delivery and LeafDFe show my work on operational products."
+      title: "Three Leaf products, from booking to tax and delivery operations."
     },
     evidence: {
       eyebrow: "Real proof",
-      title: "Published product, live interface and public activity.",
-      copy: "The main screenshots now run as compact slideshows for Leaf Delivery and LeafDFe, so the portfolio stays tighter."
+      title: "Real interfaces, operational flows and end-to-end product work.",
+      copy: "These views cover scheduling, integrations and the day-to-day workflows of three SaaS products without turning the portfolio into a screen dump."
     },
     featureCases: [
+      {
+        title: "Leaf Booking",
+        eyebrow: "Multi-tenant booking SaaS",
+        summary:
+          "Online scheduling platform for service businesses, combining a mobile booking experience for customers with a complete daily workspace for operators.",
+        points: [
+          "Public booking in a few steps, Day | Week | Month calendar views and management for services, professionals and availability.",
+          "Multi-tenant architecture designed for BR and IE markets, routing payments through PIX or Stripe according to country.",
+          "Tenant-scoped notifications, reminders and WhatsApp integrations, with both operational admin and platform-level controls."
+        ],
+        stack: ["Next.js", "React", "TypeScript", "NestJS", "Prisma", "PostgreSQL", "Redis", "BullMQ"],
+        link: { label: "View code on GitHub", href: "https://github.com/ramosbezzu/leaf-booking" },
+        images: [
+          {
+            image: "./media/leaf-booking-agenda.png",
+            alt: "Leaf Booking daily schedule and operational calendar",
+            title: "Operational calendar"
+          },
+          {
+            image: "./media/leaf-booking-whatsapp.png",
+            alt: "WhatsApp messages and reminders configuration in Leaf Booking",
+            title: "WhatsApp automation"
+          },
+          {
+            image: "./media/leaf-booking-pix.png",
+            alt: "PIX payment and reconciliation configuration in Leaf Booking",
+            title: "PIX payments and reconciliation"
+          }
+        ]
+      },
       {
         title: "Leaf Delivery",
         eyebrow: "White-label delivery",
@@ -670,7 +742,7 @@ const localeContent = {
     ],
     projectsSection: {
       eyebrow: "Selected work",
-      title: "Five projects that show where I add the most value.",
+      title: "Four products that show where I add the most value.",
       copy:
         "Not everything can be public. So I focused on the problem, the technical choices and the kind of delivery behind each project instead of padding the page with generic copy."
     },
@@ -704,7 +776,7 @@ const localeContent = {
       profileImage: "Profile photo of Guilherme Bezzuoli Ramos"
     },
     stats: [
-      { value: "5", label: "featured projects" },
+      { value: "4", label: "featured projects" },
       { value: "ERP + SaaS", label: "business systems" },
       { value: "2", label: "degrees in progress" },
       { value: "PT-BR / EN", label: "working languages" }
@@ -759,42 +831,29 @@ const localeContent = {
         links: [{ label: "Live product", href: "https://www.leafdfe.com.br/" }]
       },
       {
-        title: "War Room",
+        title: "Leaf Booking",
         tone: "paper",
-        status: "Product UI / geospatial intelligence",
-        meta: "Interactive mapping / Next.js + MapLibre + deck.gl",
+        status: "Locally validated MVP",
+        meta: "Booking SaaS / Next.js + NestJS + PostgreSQL",
         summary:
-          "Interactive mapping project built for fast geopolitical reading, with dense layers and an editorial timeline.",
+          "Multi-tenant scheduling platform for service businesses, with a mobile public booking flow and an operational calendar for the team.",
         highlights: [
-          "Frontend built for dense reading without hiding useful information.",
-          "Typed server-side layer ready to move from in-memory data to Postgres/PostGIS.",
-          "Filters, search, timeline and detail panels kept in one flow."
+          "Public booking, professional availability and day, week and month calendar views.",
+          "Business admin for services, clients, professionals, branding, payments and notifications.",
+          "Market-aware architecture with PIX in Brazil, Stripe in EUR and BullMQ queues for asynchronous jobs."
         ],
         stack: [
           "Next.js",
           "React",
           "TypeScript",
           "Tailwind CSS",
-          "MapLibre",
-          "deck.gl",
-          "zustand"
+          "NestJS",
+          "Prisma",
+          "PostgreSQL",
+          "Redis",
+          "BullMQ"
         ],
-        links: []
-      },
-      {
-        title: "BetBot",
-        tone: "ink",
-        status: "Algorithmic architecture",
-        meta: "Python / FastAPI / paper and live execution",
-        summary:
-          "Prediction markets bot with paper and live modes, risk controls, event persistence and operational endpoints.",
-        highlights: [
-          "Paper arbitrage loop with scoring, risk logic and fill simulation.",
-          "Foundation for market-making with inventory, quote generation and supervision.",
-          "APIs for analytics, wallet, health checks and real-time operation."
-        ],
-        stack: ["Python 3.10+", "FastAPI", "Uvicorn", "JSONL/SQLite", "Event store", "unittest"],
-        links: []
+        links: [{ label: "View repository", href: "https://github.com/ramosbezzu/leaf-booking" }]
       },
       {
         title: "Dispatcher",
@@ -813,6 +872,27 @@ const localeContent = {
       }
     ],
     galleryItems: [
+      {
+        label: "Leaf Booking",
+        title: "Daily calendar for a multi-professional operation",
+        image: "./media/leaf-booking-agenda.png",
+        alt: "Leaf Booking daily schedule and operational calendar",
+        fileHint: "leaf booking / calendar"
+      },
+      {
+        label: "Leaf Booking",
+        title: "Automated WhatsApp confirmations and reminders",
+        image: "./media/leaf-booking-whatsapp.png",
+        alt: "WhatsApp messages and reminders configuration in Leaf Booking",
+        fileHint: "leaf booking / whatsapp"
+      },
+      {
+        label: "Leaf Booking",
+        title: "PIX setup, webhook and reconciliation workflow",
+        image: "./media/leaf-booking-pix.png",
+        alt: "PIX payment and reconciliation configuration in Leaf Booking",
+        fileHint: "leaf booking / payments"
+      },
       {
         label: "Leaf Delivery",
         title: "Live order center for daily operations",
@@ -916,15 +996,15 @@ const localeContent = {
     stackGroups: [
       {
         label: "Frontend",
-        items: ["React", "Next.js", "TypeScript", "Vite", "Tailwind CSS", "MapLibre", "deck.gl", "SWR"]
+        items: ["React", "Next.js", "TypeScript", "Vite", "Tailwind CSS", "SWR"]
       },
       {
         label: "Backend & data",
-        items: ["Node.js", "Express", "Python", "FastAPI", "Prisma", "SQLite", "PostgreSQL", "Redis", "Zod"]
+        items: ["Node.js", "Express", "NestJS", "BullMQ", "Prisma", "SQLite", "PostgreSQL", "Redis", "Zod"]
       },
       {
         label: "Platform & integrations",
-        items: ["Clerk", "Google Cloud", "Cloudflare R2", "Socket.io", "AbacatePay", "SEFAZ", "Evolution API", "iFood", "Gemini", "Redmine"]
+        items: ["Clerk", "Google Cloud", "Cloudflare R2", "Socket.io", "AbacatePay", "Stripe", "SEFAZ", "Evolution API", "iFood", "Gemini", "Redmine"]
       }
     ],
     contactLinks: [
@@ -1328,9 +1408,12 @@ function renderGallery(content) {
   const container = document.querySelector("#gallery-grid");
   if (!container) return;
 
+  const bookingSlides = content.galleryItems.filter((item) => item.label === "Leaf Booking");
   const deliverySlides = content.galleryItems.filter((item) => item.label === "Leaf Delivery");
   const dfeSlides = content.galleryItems.filter((item) => item.label === "LeafDFe");
-  const proofs = content.galleryItems.filter((item) => !["Leaf Delivery", "LeafDFe"].includes(item.label));
+  const proofs = content.galleryItems.filter(
+    (item) => !["Leaf Booking", "Leaf Delivery", "LeafDFe"].includes(item.label)
+  );
 
   const renderProofs = (items) =>
     items
@@ -1351,6 +1434,13 @@ function renderGallery(content) {
       .join("");
 
   container.innerHTML = `
+    <article class="gallery-showcase" data-reveal>
+      <div class="gallery-showcase__head">
+        <p>Leaf Booking</p>
+        <span>agendamento / SaaS</span>
+      </div>
+      ${renderCaseSlideshow(bookingSlides, "Leaf Booking slideshow")}
+    </article>
     <article class="gallery-showcase" data-reveal>
       <div class="gallery-showcase__head">
         <p>Leaf Delivery</p>
