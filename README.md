@@ -23,7 +23,25 @@ Os dados que você vai trocar com mais frequência estão em `script.js`:
 - `stats`
 - `contactLinks`
 
-Se quiser trocar o hero, a bio principal ou a estrutura de seções, ajuste `index.html`.
+O conteúdo em português e inglês fica em `localeContent.pt` e `localeContent.en`.
+Atualize os dois idiomas ao alterar o hero, a bio, os projetos ou a stack.
+`index.html` contém a estrutura e o texto inicial em português.
+
+### Tecnologias
+
+A seção de tecnologias reúne linguagens, frontend, backend, dados, cloud,
+testes, IA, integrações e experiência com ERP. Cada grupo tem uma descrição
+do contexto de uso, sem atribuir níveis de domínio.
+
+- `sharedStackWall`: tecnologias destacadas na grade principal
+- `stackGroups`: grupos, descrições e tecnologias em cada idioma
+- `iconMap`: ícones ou monogramas das tecnologias
+
+As tecnologias listadas foram conferidas no histórico profissional e nos
+projetos Leaf, Dispatcher, Paulus e naPorta. Java, AngularJS e JasperReports
+aparecem com o contexto da experiência profissional em ERP; RAG e ChromaDB,
+com o contexto do Paulus. Ao adicionar uma tecnologia, confirme seu uso
+antes de incluí-la e mantenha a stack dos cards de projetos consistente.
 
 ## Trocar foto e prints
 

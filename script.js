@@ -2,6 +2,21 @@ const iconMap = {
   "Next.js": { slug: "nextdotjs", color: "111827", short: "NX" },
   React: { slug: "react", color: "2C6636", short: "RC" },
   TypeScript: { slug: "typescript", color: "3178C6", short: "TS" },
+  JavaScript: { slug: "javascript", color: "8A6400", short: "JS" },
+  Shell: { slug: "gnubash", color: "111827", short: "SH" },
+  Fastify: { slug: "fastify", color: "111827", short: "FY" },
+  Docker: { slug: "docker", color: "2496ED", short: "DK" },
+  Playwright: { short: "PW" },
+  Storybook: { slug: "storybook", color: "FF4785", short: "SB" },
+  Sentry: { slug: "sentry", color: "362D59", short: "SN" },
+  Railway: { slug: "railway", color: "111827", short: "RW" },
+  "GitHub Actions": { slug: "githubactions", color: "2088FF", short: "GA" },
+  "Claude Code": { slug: "claude", color: "B75C3D", short: "CC" },
+  ChromaDB: { short: "CH" },
+  RAG: { short: "RG" },
+  JasperReports: { short: "JR" },
+  ESLint: { slug: "eslint", color: "4B32C3", short: "ES" },
+  Biome: { slug: "biome", color: "60A5FA", short: "BI" },
   Prisma: { slug: "prisma", color: "111827", short: "PR" },
   Clerk: { src: "./media/icons/stack-clerk.svg", short: "CL" },
   "Upstash Redis": { slug: "upstash", color: "00E9A3", short: "UP" },
@@ -32,7 +47,7 @@ const iconMap = {
   AngularJS: { slug: "angular", color: "DD0031", short: "NG" },
   Git: { slug: "git", color: "F05032", short: "GT" },
   HTML: { slug: "html5", color: "E34F26", short: "HT" },
-  CSS: { slug: "css3", color: "1572B6", short: "CS" },
+  CSS: { short: "CS" },
   SQL: { short: "DB" },
   Vitest: { slug: "vitest", color: "6E9F18", short: "VT" },
   Vercel: { slug: "vercel", color: "111827", short: "VC" },
@@ -61,18 +76,19 @@ const sharedStackWall = [
   "Next.js",
   "React",
   "TypeScript",
+  "JavaScript",
   "Node.js",
-  "Python 3.10+",
+  "NestJS",
+  "Fastify",
+  "Python",
   "PostgreSQL",
   "Prisma",
   "Redis",
   "Google Cloud",
-  "Git",
-  "Vercel",
-  "Cloudflare R2",
-  "NestJS",
-  "BullMQ",
-  "Vitest"
+  "Docker",
+  "Vitest",
+  "Playwright",
+  "Claude Code"
 ];
 
 const localeContent = {
@@ -176,7 +192,7 @@ const localeContent = {
           "WhatsApp/Evolution, iFood, PIX Abacate Pay, cupons, estoque e receitas dentro da rotina operacional.",
           "Admin tenant e admin geral com permissões, multiunidade, planos comerciais e operação em produção."
         ],
-        stack: ["Next.js", "React", "TypeScript", "Prisma", "PostgreSQL", "Vitest", "AbacatePay", "Evolution API", "iFood"],
+        stack: ["Next.js", "React", "TypeScript", "NestJS", "Fastify", "Prisma", "PostgreSQL", "Redis", "BullMQ", "Vitest", "AbacatePay", "Evolution API", "iFood"],
         link: { label: "leafdelivery.com.br", href: "https://leafdelivery.com.br/" },
         images: [
           {
@@ -248,8 +264,8 @@ const localeContent = {
       title: "Experiência prática com ERP, dados, requisitos e operação."
     },
     stackSection: {
-      eyebrow: "Stack no código",
-      title: "Ferramentas que aparecem nos projetos acima sem inflar lista."
+      eyebrow: "Tecnologias e ferramentas",
+      title: "O que uso para construir, integrar e operar software."
     },
     contactSection: {
       eyebrow: "Contato",
@@ -283,7 +299,7 @@ const localeContent = {
         title: "Leaf Delivery",
         tone: "accent",
         status: "Em produção",
-        meta: "SaaS white-label / Next.js + Prisma + PostgreSQL",
+        meta: "SaaS white-label / Next.js + NestJS + PostgreSQL",
         summary:
           "Plataforma white-label para restaurante, adega e operação local vender pelo próprio canal sem perder pedido entre WhatsApp, balcão, cozinha e entrega.",
         highlights: [
@@ -297,6 +313,10 @@ const localeContent = {
           "TypeScript",
           "Prisma",
           "PostgreSQL",
+          "NestJS",
+          "Fastify",
+          "Redis",
+          "BullMQ",
           "Vitest",
           "AbacatePay",
           "Evolution API",
@@ -492,16 +512,49 @@ const localeContent = {
     ],
     stackGroups: [
       {
+        label: "Linguagens",
+        description: "TypeScript, JavaScript e SQL no trabalho com SaaS. Python e Shell em ferramentas e automação; Java na experiência profissional com ERP.",
+        items: ["TypeScript", "JavaScript", "SQL", "Python", "Shell", "Java"]
+      },
+      {
         label: "Frontend",
-        items: ["React", "Next.js", "TypeScript", "Vite", "Tailwind CSS", "SWR"]
+        description: "Interfaces dos produtos Leaf e do Dispatcher, com estado, dados e layouts responsivos.",
+        items: ["React", "Next.js", "HTML", "CSS", "Tailwind CSS", "Vite", "zustand", "SWR"]
       },
       {
-        label: "Backend e dados",
-        items: ["Node.js", "Express", "NestJS", "BullMQ", "Prisma", "SQLite", "PostgreSQL", "Redis", "Zod"]
+        label: "Backend e APIs",
+        description: "APIs REST, validação e workers nos SaaS. FastAPI nas ferramentas Python e BullMQ nas tarefas em segundo plano.",
+        items: ["Node.js", "NestJS", "Fastify", "Express", "FastAPI", "BullMQ", "Zod"]
       },
       {
-        label: "Plataforma e integrações",
-        items: ["Clerk", "Google Cloud", "Cloudflare R2", "Socket.io", "AbacatePay", "Stripe", "SEFAZ", "Evolution API", "iFood", "Gemini", "Redmine"]
+        label: "Dados e persistência",
+        description: "Consultas SQL, migrations com Prisma, cache e armazenamento de dados em produtos e ferramentas internas.",
+        items: ["PostgreSQL", "Prisma", "Redis", "Upstash Redis", "SQLite"]
+      },
+      {
+        label: "Cloud e operação",
+        description: "Deploy com Cloud Run, Cloud SQL e Cloud Build no Google Cloud, além de Vercel e Railway. Containers, versionamento, CI/CD e monitoramento.",
+        items: ["Google Cloud", "Vercel", "Railway", "Docker", "Git", "GitHub", "GitHub Actions", "Sentry"]
+      },
+      {
+        label: "Testes e qualidade",
+        description: "Testes automatizados, validação de fluxos no navegador, componentes em Storybook e análise estática.",
+        items: ["Vitest", "Playwright", "Storybook", "ESLint", "Biome"]
+      },
+      {
+        label: "IA e automação",
+        description: "Desenvolvimento assistido por Claude Code, integração com Gemini no Dispatcher e busca de contexto com RAG e ChromaDB no Paulus.",
+        items: ["Claude Code", "Gemini", "RAG", "ChromaDB"]
+      },
+      {
+        label: "Integrações de produto",
+        description: "Autenticação, pagamentos, WhatsApp e serviços fiscais: SOAP, mTLS, certificados A1 e XML na integração com a SEFAZ.",
+        items: ["Clerk", "Cloudflare R2", "Socket.io", "AbacatePay", "Stripe", "SEFAZ", "Evolution API", "iFood"]
+      },
+      {
+        label: "ERP e ferramentas corporativas",
+        description: "Java e AngularJS na manutenção de ERP, JasperReports para relatórios e Redmine no fluxo de chamados e na integração do Dispatcher.",
+        items: ["Java", "AngularJS", "JasperReports", "Redmine"]
       }
     ],
     contactLinks: [
@@ -679,7 +732,7 @@ const localeContent = {
           "WhatsApp/Evolution, iFood, Abacate Pay PIX, coupons, inventory and recipes inside the operational routine.",
           "Tenant admin and platform admin with permissions, multi-unit operations, commercial plans and live production workflows."
         ],
-        stack: ["Next.js", "React", "TypeScript", "Prisma", "PostgreSQL", "Vitest", "AbacatePay", "Evolution API", "iFood"],
+        stack: ["Next.js", "React", "TypeScript", "NestJS", "Fastify", "Prisma", "PostgreSQL", "Redis", "BullMQ", "Vitest", "AbacatePay", "Evolution API", "iFood"],
         link: { label: "leafdelivery.com.br", href: "https://leafdelivery.com.br/" },
         images: [
           {
@@ -751,8 +804,8 @@ const localeContent = {
       title: "Hands-on experience with ERP workflows, data, requirements and operations."
     },
     stackSection: {
-      eyebrow: "Stack in code",
-      title: "Tools that actually show up in the projects above."
+      eyebrow: "Technologies and tools",
+      title: "What I use to build, integrate and operate software."
     },
     contactSection: {
       eyebrow: "Contact",
@@ -786,7 +839,7 @@ const localeContent = {
         title: "Leaf Delivery",
         tone: "accent",
         status: "Live product",
-        meta: "White-label SaaS / Next.js + Prisma + PostgreSQL",
+        meta: "White-label SaaS / Next.js + NestJS + PostgreSQL",
         summary:
           "White-label platform for restaurants, liquor stores and local operations to sell through their own channel without losing orders across WhatsApp, counter service, kitchen and delivery.",
         highlights: [
@@ -800,6 +853,10 @@ const localeContent = {
           "TypeScript",
           "Prisma",
           "PostgreSQL",
+          "NestJS",
+          "Fastify",
+          "Redis",
+          "BullMQ",
           "Vitest",
           "AbacatePay",
           "Evolution API",
@@ -995,16 +1052,49 @@ const localeContent = {
     ],
     stackGroups: [
       {
+        label: "Languages",
+        description: "TypeScript, JavaScript and SQL in SaaS work. Python and Shell for tooling and automation; Java in professional ERP development.",
+        items: ["TypeScript", "JavaScript", "SQL", "Python", "Shell", "Java"]
+      },
+      {
         label: "Frontend",
-        items: ["React", "Next.js", "TypeScript", "Vite", "Tailwind CSS", "SWR"]
+        description: "Interfaces for Leaf products and Dispatcher, including state management, data fetching and responsive layouts.",
+        items: ["React", "Next.js", "HTML", "CSS", "Tailwind CSS", "Vite", "zustand", "SWR"]
       },
       {
-        label: "Backend & data",
-        items: ["Node.js", "Express", "NestJS", "BullMQ", "Prisma", "SQLite", "PostgreSQL", "Redis", "Zod"]
+        label: "Backend and APIs",
+        description: "REST APIs, validation and workers in SaaS products. FastAPI for Python tools and BullMQ for background jobs.",
+        items: ["Node.js", "NestJS", "Fastify", "Express", "FastAPI", "BullMQ", "Zod"]
       },
       {
-        label: "Platform & integrations",
-        items: ["Clerk", "Google Cloud", "Cloudflare R2", "Socket.io", "AbacatePay", "Stripe", "SEFAZ", "Evolution API", "iFood", "Gemini", "Redmine"]
+        label: "Data and persistence",
+        description: "SQL queries, Prisma migrations, caching and data storage in products and internal tools.",
+        items: ["PostgreSQL", "Prisma", "Redis", "Upstash Redis", "SQLite"]
+      },
+      {
+        label: "Cloud and operations",
+        description: "Deployment with Cloud Run, Cloud SQL and Cloud Build on Google Cloud, plus Vercel and Railway. Containers, version control, CI/CD and monitoring.",
+        items: ["Google Cloud", "Vercel", "Railway", "Docker", "Git", "GitHub", "GitHub Actions", "Sentry"]
+      },
+      {
+        label: "Testing and quality",
+        description: "Automated tests, browser flow checks, components in Storybook and static analysis.",
+        items: ["Vitest", "Playwright", "Storybook", "ESLint", "Biome"]
+      },
+      {
+        label: "AI and automation",
+        description: "AI-assisted development with Claude Code, Gemini integration in Dispatcher and context retrieval with RAG and ChromaDB in Paulus.",
+        items: ["Claude Code", "Gemini", "RAG", "ChromaDB"]
+      },
+      {
+        label: "Product integrations",
+        description: "Authentication, payments, WhatsApp and fiscal services: SOAP, mTLS, A1 certificates and XML in the SEFAZ integration.",
+        items: ["Clerk", "Cloudflare R2", "Socket.io", "AbacatePay", "Stripe", "SEFAZ", "Evolution API", "iFood"]
+      },
+      {
+        label: "ERP and business tools",
+        description: "Java and AngularJS in ERP maintenance, JasperReports for reports and Redmine in support workflows and the Dispatcher integration.",
+        items: ["Java", "AngularJS", "JasperReports", "Redmine"]
       }
     ],
     contactLinks: [
@@ -1151,7 +1241,7 @@ function renderStackTag(name) {
         <span class="stack-tag__fallback">${icon.short}</span>
         ${
           icon.src
-            ? `<img class="stack-tag__icon" src="${icon.src}" alt="" loading="lazy" onerror="this.remove(); this.parentElement.classList.remove('has-icon'); this.parentElement.classList.add('is-fallback');" />`
+            ? `<img class="stack-tag__icon" src="${icon.src}" alt="" loading="lazy" onerror="this.parentElement.classList.remove('has-icon'); this.parentElement.classList.add('is-fallback'); this.remove();" />`
             : ""
         }
       </span>
@@ -1393,7 +1483,7 @@ function renderStackWall() {
             <span class="stack-wall__fallback">${icon.short}</span>
             ${
               icon.src
-                ? `<img class="stack-wall__icon" src="${icon.src}" alt="" loading="lazy" onerror="this.remove(); this.parentElement.classList.remove('has-icon'); this.parentElement.classList.add('is-fallback');" />`
+                ? `<img class="stack-wall__icon" src="${icon.src}" alt="" loading="lazy" onerror="this.parentElement.classList.remove('has-icon'); this.parentElement.classList.add('is-fallback'); this.remove();" />`
                 : ""
             }
           </span>
@@ -1485,7 +1575,8 @@ function renderStackGroups(content) {
     .map(
       (group) => `
         <article class="stack-group">
-          <span class="stack-group__label">${group.label}</span>
+          <h3 class="stack-group__label">${group.label}</h3>
+          <p class="stack-group__description">${group.description}</p>
           <div class="stack-group__items">
             ${group.items.map(renderStackTag).join("")}
           </div>
@@ -1538,7 +1629,7 @@ function revealSections() {
         }
       }
     },
-    { threshold: 0.14 }
+    { threshold: 0.01 }
   );
 
   for (const element of elements) {
