@@ -59,7 +59,9 @@ const iconMap = {
   iFood: { short: "IF" },
   NestJS: { slug: "nestjs", color: "E0234E", short: "NS" },
   BullMQ: { short: "BQ" },
-  Stripe: { slug: "stripe", color: "635BFF", short: "ST" }
+  Stripe: { slug: "stripe", color: "635BFF", short: "ST" },
+  MongoDB: { slug: "mongodb", color: "47A248", short: "MG" },
+  RabbitMQ: { slug: "rabbitmq", color: "FF6600", short: "RQ" }
 };
 
 const sharedHeroStacks = [
@@ -76,16 +78,16 @@ const sharedStackWall = [
   "Next.js",
   "React",
   "TypeScript",
-  "JavaScript",
   "Node.js",
   "NestJS",
-  "Fastify",
-  "Python",
   "PostgreSQL",
-  "Prisma",
+  "MongoDB",
   "Redis",
-  "Google Cloud",
+  "RabbitMQ",
+  "BullMQ",
+  "Prisma",
   "Docker",
+  "Google Cloud",
   "Vitest",
   "Playwright",
   "Claude Code"
@@ -97,7 +99,7 @@ const localeContent = {
       htmlLang: "pt-BR",
       title: "Guilherme Bezzuoli Ramos | Portfólio",
       description:
-        "Portfólio de Guilherme Bezzuoli Ramos: SaaS de agendamento, delivery white-label, automação, integrações e interfaces operacionais."
+        "Portfólio de Guilherme Bezzuoli Ramos: desenvolvedor full stack com experiência de suporte N1 a N3 em ERP, SaaS fiscal em produção, ferramentas internas com IA e integrações."
     },
     nav: {
       projects: "Projetos",
@@ -118,13 +120,13 @@ const localeContent = {
       eyebrow: "Portfólio técnico / GitHub Pages / 2026",
       title: "Eu construo SaaS e ferramentas internas para operação real.",
       lede:
-        "Sou <strong>Guilherme Bezzuoli Ramos</strong>, desenvolvedor full-stack com bagagem em ERP, processos, requisitos e desenvolvimento web. Gosto de pegar fluxo confuso, organizar regra de negócio, integrar serviço e entregar interface que o time realmente usa no dia a dia.",
+        "Sou <strong>Guilherme Bezzuoli Ramos</strong>, desenvolvedor full stack com quase 5 anos em empresa de software ERP, do estágio em desenvolvimento ao suporte N3, e SaaS próprios em produção. Trabalho com TypeScript, Node.js/NestJS, React/Next.js e PostgreSQL, e a vivência com clientes e incidentes de ERP me faz transformar regra de negócio em software confiável.",
       manifestoTitle: "Visual da página",
       manifestoText:
         "A base visual veio do LeafDFe. Quis uma página mais seca, com blocos fortes e curvas pontuais, sem cair naquela cara de template.",
       ctaProjects: "Ver projetos",
       ctaLeaf: "Ver LeafDFe",
-      identity: ["23 anos", "Brasileiro", "Português fluente", "Inglês conversacional"],
+      identity: ["23 anos", "Brasileiro", "Português nativo", "Inglês C1 (EF SET)"],
       ribbonEyebrow: "Brasil / São Paulo",
       ribbonText:
         "Trabalho a partir de São Paulo, com experiência prática em ERP, operação e produto web."
@@ -144,14 +146,49 @@ const localeContent = {
     },
     feature: {
       eyebrow: "Cases principais",
-      title: "Três produtos Leaf, do agendamento à operação fiscal e de delivery."
+      title: "Dois produtos Leaf: a operação fiscal e o agendamento."
     },
     evidence: {
       eyebrow: "Recortes reais",
       title: "Interfaces reais, fluxos operacionais e produto construído de ponta a ponta.",
-      copy: "Os recortes mostram agenda, integrações e rotinas dos três SaaS sem transformar o portfólio em uma lista de telas."
+      copy: "Os recortes mostram o LeafDFe, o Leaf Booking e o Dispatcher sem transformar o portfólio em uma lista de telas."
     },
     featureCases: [
+      {
+        title: "LeafDFe",
+        eyebrow: "SaaS fiscal",
+        summary:
+          "SaaS fiscal para tirar consulta, manifestação e guarda de DF-e da rotina manual, com cobrança, autenticação e multiempresa no mesmo fluxo.",
+        points: [
+          "Consulta e manifestação na SEFAZ para NF-e, CT-e, MDF-e e NFS-e, via SOAP/mTLS com certificado A1.",
+          "Download de XML e DANFE, guarda em nuvem, relatórios e operação multiempresa.",
+          "Checkout, autenticação, Redis, Prisma e Cloudflare R2 encaixados no produto."
+        ],
+        stack: ["Next.js", "React", "TypeScript", "Prisma", "Clerk", "Upstash Redis", "Cloudflare R2", "AbacatePay", "SEFAZ"],
+        link: { label: "leafdfe.com.br", href: "https://www.leafdfe.com.br/" },
+        images: [
+          {
+            image: "./media/leaf-dashboard.png",
+            alt: "Screenshot do dashboard do LeafDFe",
+            title: "Dashboard fiscal"
+          },
+          {
+            image: "./media/leaf-documentos.png",
+            alt: "Screenshot da tela de documentos fiscais do LeafDFe",
+            title: "Documentos fiscais"
+          },
+          {
+            image: "./media/leaf-multiempresas.png",
+            alt: "Screenshot da tela de unidades e certificados do LeafDFe",
+            title: "Multiempresa"
+          },
+          {
+            image: "./media/leaf-relatorios.png",
+            alt: "Screenshot da tela de relatórios fiscais do LeafDFe",
+            title: "Relatórios"
+          }
+        ]
+      },
       {
         title: "Leaf Booking",
         eyebrow: "SaaS de agendamento multi-tenant",
@@ -181,76 +218,6 @@ const localeContent = {
             title: "Pagamento e conciliação PIX"
           }
         ]
-      },
-      {
-        title: "Leaf Delivery",
-        eyebrow: "Delivery white-label",
-        summary:
-          "SaaS para restaurante, adega e operação local vender pelo próprio canal sem perder pedido entre WhatsApp, balcão, cozinha, mesa e entrega.",
-        points: [
-          "Storefront, checkout, tracking, mesa QR, garçom, comandas e KDS no mesmo produto.",
-          "WhatsApp/Evolution, iFood, PIX Abacate Pay, cupons, estoque e receitas dentro da rotina operacional.",
-          "Admin tenant e admin geral com permissões, multiunidade, planos comerciais e operação em produção."
-        ],
-        stack: ["Next.js", "React", "TypeScript", "NestJS", "Fastify", "Prisma", "PostgreSQL", "Redis", "BullMQ", "Vitest", "AbacatePay", "Evolution API", "iFood"],
-        link: { label: "leafdelivery.com.br", href: "https://leafdelivery.com.br/" },
-        images: [
-          {
-            image: "./media/leaf-delivery-pedidos.png",
-            alt: "Screenshot da central de pedidos do Leaf Delivery",
-            title: "Pedidos ao vivo"
-          },
-          {
-            image: "./media/leaf-delivery-kds.png",
-            alt: "Screenshot da tela de cozinha KDS do Leaf Delivery",
-            title: "KDS de cozinha"
-          },
-          {
-            image: "./media/leaf-delivery-storefront.png",
-            alt: "Screenshot do storefront mobile do Leaf Delivery com carrinho",
-            title: "Storefront mobile"
-          },
-          {
-            image: "./media/leaf-delivery-whatsapp.png",
-            alt: "Screenshot da inbox WhatsApp do Leaf Delivery",
-            title: "WhatsApp na operação"
-          }
-        ]
-      },
-      {
-        title: "LeafDFe",
-        eyebrow: "SaaS fiscal",
-        summary:
-          "SaaS fiscal para tirar consulta, manifestação e guarda de DF-e da rotina manual, com cobrança, autenticação e multiempresa no mesmo fluxo.",
-        points: [
-          "Consulta e manifestação na SEFAZ para NF-e, CT-e e MDF-e.",
-          "Download de XML e DANFE, guarda em nuvem, relatórios e operação multiempresa.",
-          "Checkout, autenticação, Redis, Prisma e Cloudflare R2 encaixados no produto."
-        ],
-        stack: ["Next.js", "React", "TypeScript", "Prisma", "Clerk", "Upstash Redis", "Cloudflare R2", "AbacatePay", "SEFAZ"],
-        link: { label: "leafdfe.com.br", href: "https://www.leafdfe.com.br/" },
-        images: [
-          {
-            image: "./media/leaf-dashboard.png",
-            alt: "Screenshot do dashboard do LeafDFe",
-            title: "Dashboard fiscal"
-          },
-          {
-            image: "./media/leaf-documentos.png",
-            alt: "Screenshot da tela de documentos fiscais do LeafDFe",
-            title: "Documentos fiscais"
-          },
-          {
-            image: "./media/leaf-multiempresas.png",
-            alt: "Screenshot da tela de unidades e certificados do LeafDFe",
-            title: "Multiempresa"
-          },
-          {
-            image: "./media/leaf-relatorios.png",
-            alt: "Screenshot da tela de relatórios fiscais do LeafDFe",
-            title: "Relatórios"
-          }
-        ]
       }
     ],
     projectsSection: {
@@ -269,7 +236,7 @@ const localeContent = {
     },
     contactSection: {
       eyebrow: "Contato",
-      title: "Se quiser conversar sobre produto, frontend ou automação, estou por aqui.",
+      title: "Se quiser conversar sobre desenvolvimento full stack, suporte técnico ou automação, estou por aqui.",
       copy:
         "E-mail ainda é o canal mais fácil. Também deixei telefone, GitHub, LinkedIn e CV para quem quiser validar contexto antes de falar comigo."
     },
@@ -289,41 +256,12 @@ const localeContent = {
       profileImage: "Foto de perfil de Guilherme Bezzuoli Ramos"
     },
     stats: [
-      { value: "4", label: "projetos destacados" },
-      { value: "ERP + SaaS", label: "negócio e produto" },
-      { value: "2", label: "graduações em andamento" },
-      { value: "PT-BR / EN", label: "idiomas de trabalho" }
+      { value: "~5 anos", label: "em software ERP, do estágio ao N3" },
+      { value: "300", label: "clientes na base atendida" },
+      { value: "20+", label: "clientes treinados" },
+      { value: "C1", label: "inglês certificado (EF SET)" }
     ],
     projects: [
-      {
-        title: "Leaf Delivery",
-        tone: "accent",
-        status: "Em produção",
-        meta: "SaaS white-label / Next.js + NestJS + PostgreSQL",
-        summary:
-          "Plataforma white-label para restaurante, adega e operação local vender pelo próprio canal sem perder pedido entre WhatsApp, balcão, cozinha e entrega.",
-        highlights: [
-          "Storefront, checkout, tracking público, QR de mesa, garçom, comandas e KDS no mesmo fluxo.",
-          "Integrações operacionais com WhatsApp/Evolution, iFood, PIX Abacate Pay, cupons, estoque e receitas.",
-          "Admin tenant e admin geral com permissões, multiunidade, planos comerciais e trilha de operação real."
-        ],
-        stack: [
-          "Next.js",
-          "React",
-          "TypeScript",
-          "Prisma",
-          "PostgreSQL",
-          "NestJS",
-          "Fastify",
-          "Redis",
-          "BullMQ",
-          "Vitest",
-          "AbacatePay",
-          "Evolution API",
-          "iFood"
-        ],
-        links: [{ label: "Produto ao vivo", href: "https://leafdelivery.com.br/" }]
-      },
       {
         title: "LeafDFe",
         tone: "brand",
@@ -332,7 +270,7 @@ const localeContent = {
         summary:
           "SaaS fiscal que centraliza consulta, manifestação e guarda de DF-e para reduzir rotina manual no time fiscal.",
         highlights: [
-          "Consulta e manifestação na SEFAZ para NF-e, CT-e e MDF-e.",
+          "Consulta e manifestação na SEFAZ para NF-e, CT-e, MDF-e e NFS-e.",
           "Checkout com AbacatePay ligado ao produto e às páginas públicas.",
           "Arquitetura multi-tenant com Clerk, Redis, Prisma e Cloudflare R2."
         ],
@@ -346,6 +284,21 @@ const localeContent = {
           "Cloudflare R2"
         ],
         links: [{ label: "Produto ao vivo", href: "https://www.leafdfe.com.br/" }]
+      },
+      {
+        title: "Dispatcher",
+        tone: "accent",
+        status: "Ferramenta interna de IA na Softland",
+        meta: "React + Vite + Express + SQLite + Gemini",
+        summary:
+          "Ferramenta interna que transforma áudio e anotações de atendimento em relatórios e tickets no Redmine. Usada por 3 analistas durante 6 meses, com economia de 2 a 3 horas por dia em registros manuais.",
+        highlights: [
+          "Interface em React/Vite feita para uso interno contínuo.",
+          "Backend Express com autenticação, rate limit, Socket.io e persistência em SQLite.",
+          "Fluxo ligado a processo interno, IA e ferramenta corporativa."
+        ],
+        stack: ["React", "TypeScript", "Vite", "Express", "SQLite", "Socket.io", "Gemini"],
+        links: []
       },
       {
         title: "Leaf Booking",
@@ -373,19 +326,18 @@ const localeContent = {
         links: [{ label: "Ver repositório", href: "https://github.com/ramosbezzu/leaf-booking" }]
       },
       {
-        title: "Dispatcher",
-        tone: "accent",
-        status: "Ferramenta interna de IA",
-        meta: "React + Vite + Express + SQLite + Gemini",
+        title: "Leaf Delivery",
+        tone: "paper",
+        status: "Em produção",
+        meta: "SaaS de pedidos / NestJS + PostgreSQL",
         summary:
-          "Ferramenta interna para abrir ticket a partir de áudio e texto, com integração ao Redmine e ambientes beta e produção separados.",
+          "Plataforma multi-tenant de pedidos para restaurantes e operação local, com loja, PDV, cozinha, WhatsApp, iFood e PIX.",
         highlights: [
-          "Interface em React/Vite feita para uso interno contínuo.",
-          "Backend Express com autenticação, rate limit, Socket.io e persistência em SQLite.",
-          "Fluxo ligado a processo interno, IA e ferramenta corporativa."
+          "Backend migrado de rotas Next.js para NestJS/Fastify, com workers BullMQ no GCP Cloud Run.",
+          "Testes com Vitest e Playwright e monitoramento com Sentry."
         ],
-        stack: ["React", "TypeScript", "Vite", "Express", "SQLite", "Socket.io", "Gemini"],
-        links: []
+        stack: ["Next.js", "NestJS", "Fastify", "PostgreSQL", "Redis", "BullMQ"],
+        links: [{ label: "Produto ao vivo", href: "https://leafdelivery.com.br/" }]
       }
     ],
     galleryItems: [
@@ -411,20 +363,6 @@ const localeContent = {
         fileHint: "leaf booking / pagamentos"
       },
       {
-        label: "Leaf Delivery",
-        title: "Central de pedidos para operação ao vivo",
-        image: "./media/leaf-delivery-pedidos.png",
-        alt: "Screenshot da central de pedidos do Leaf Delivery",
-        fileHint: "leafdelivery / pedidos"
-      },
-      {
-        label: "Leaf Delivery",
-        title: "KDS de cozinha e fila de preparo",
-        image: "./media/leaf-delivery-kds.png",
-        alt: "Screenshot da tela de cozinha KDS do Leaf Delivery",
-        fileHint: "leafdelivery / cozinha"
-      },
-      {
         label: "LeafDFe",
         title: "Dashboard fiscal com visão operacional",
         image: "./media/leaf-dashboard.png",
@@ -437,20 +375,6 @@ const localeContent = {
         image: "./media/leaf-documentos.png",
         alt: "Screenshot da tela de documentos fiscais do LeafDFe",
         fileHint: "leafdfe / documentos"
-      },
-      {
-        label: "Leaf Delivery",
-        title: "Storefront mobile com carrinho",
-        image: "./media/leaf-delivery-storefront.png",
-        alt: "Screenshot do storefront mobile do Leaf Delivery com carrinho",
-        fileHint: "leafdelivery / storefront"
-      },
-      {
-        label: "Leaf Delivery",
-        title: "Inbox WhatsApp dentro da operação",
-        image: "./media/leaf-delivery-whatsapp.png",
-        alt: "Screenshot da inbox WhatsApp do Leaf Delivery",
-        fileHint: "leafdelivery / whatsapp"
       },
       {
         label: "LeafDFe",
@@ -490,14 +414,14 @@ const localeContent = {
     ],
     businessCards: [
       {
-        title: "ERP, fluxo e regra de negócio",
+        title: "Suporte de ERP, do N1 ao N3",
         description:
-          "Já trabalhei perto de rotina corporativa de verdade, então costumo pensar em exceção, conferência e gargalo antes de pensar só na tela."
+          "Na Softland Sistemas atendia de 15 a 30 chamados por dia numa base de cerca de 300 clientes (188 no ERP legado em Delphi), com pico de 50 clientes num dia de SEFAZ fora do ar. Investigava incidentes com SQL e logs e entregava ao desenvolvimento causa raiz e passos de reprodução."
       },
       {
-        title: "Dados, saídas e produtividade",
+        title: "Treinamento de clientes",
         description:
-          "Relatório, CSV e consulta precisam ajudar alguém a decidir ou conferir alguma coisa. Tento manter esse critério em tudo que entrego."
+          "Treinei mais de 20 clientes nos módulos Fiscal, CRM, Financeiro, Estoque e integrações bancárias (CNAB 240 e 400), incluindo uma turma presencial de mais de 10 pessoas."
       },
       {
         title: "Requisitos e documentação funcional",
@@ -523,13 +447,13 @@ const localeContent = {
       },
       {
         label: "Backend e APIs",
-        description: "APIs REST, validação e workers nos SaaS. FastAPI nas ferramentas Python e BullMQ nas tarefas em segundo plano.",
-        items: ["Node.js", "NestJS", "Fastify", "Express", "FastAPI", "BullMQ", "Zod"]
+        description: "APIs REST, validação e workers nos SaaS. FastAPI nas ferramentas Python; mensageria e processamento assíncrono com RabbitMQ e filas BullMQ.",
+        items: ["Node.js", "NestJS", "Fastify", "Express", "FastAPI", "RabbitMQ", "BullMQ", "Zod"]
       },
       {
         label: "Dados e persistência",
-        description: "Consultas SQL, migrations com Prisma, cache e armazenamento de dados em produtos e ferramentas internas.",
-        items: ["PostgreSQL", "Prisma", "Redis", "Upstash Redis", "SQLite"]
+        description: "Bancos relacionais e não relacionais: consultas SQL, migrations com Prisma, MongoDB, cache com Redis e armazenamento em produtos e ferramentas internas.",
+        items: ["PostgreSQL", "MongoDB", "Prisma", "Redis", "Upstash Redis", "SQLite"]
       },
       {
         label: "Cloud e operação",
@@ -591,14 +515,6 @@ const localeContent = {
         tier: "secondary"
       },
       {
-        label: "Case delivery",
-        value: "leafdelivery.com.br",
-        href: "https://leafdelivery.com.br/",
-        description: "SaaS white-label em produção para delivery, salão, cozinha, WhatsApp, iFood, PIX e estoque.",
-        newTab: true,
-        tier: "secondary"
-      },
-      {
         label: "Case fiscal",
         value: "leafdfe.com.br",
         href: "https://www.leafdfe.com.br/",
@@ -611,6 +527,14 @@ const localeContent = {
         value: "linkedin.com/in/gbzramos",
         href: "https://linkedin.com/in/gbzramos",
         description: "Perfil profissional com histórico e contexto de carreira.",
+        newTab: true,
+        tier: "secondary"
+      },
+      {
+        label: "Case delivery",
+        value: "leafdelivery.com.br",
+        href: "https://leafdelivery.com.br/",
+        description: "SaaS de pedidos em produção, com NestJS, filas BullMQ e integrações de WhatsApp, iFood e PIX.",
         newTab: true,
         tier: "secondary"
       },
@@ -637,7 +561,7 @@ const localeContent = {
       htmlLang: "en",
       title: "Guilherme Bezzuoli Ramos | Portfolio",
       description:
-        "Portfolio of Guilherme Bezzuoli Ramos: booking SaaS, white-label delivery, workflow automation, integrations and operational interfaces."
+        "Portfolio of Guilherme Bezzuoli Ramos: full stack developer with L1 to L3 ERP support experience, a tax SaaS in production, internal AI tools and integrations."
     },
     nav: {
       projects: "Projects",
@@ -658,13 +582,13 @@ const localeContent = {
       eyebrow: "Engineering portfolio / GitHub Pages / 2026",
       title: "I build SaaS products and internal tools for real operations.",
       lede:
-        "I'm <strong>Guilherme Bezzuoli Ramos</strong>, a full-stack developer with hands-on experience in ERP workflows, process analysis, requirements and web delivery. I like taking messy flows, turning business rules into working software and shipping interfaces people actually use every day.",
+        "I'm <strong>Guilherme Bezzuoli Ramos</strong>, a full stack developer with almost 5 years at an ERP software company, from development intern to L3 support, plus self-built SaaS products in production. I work with TypeScript, Node.js/NestJS, React/Next.js and PostgreSQL, and years of client-facing ERP incident work taught me to turn business rules into reliable software.",
       manifestoTitle: "Page visual",
       manifestoText:
         "The visual system came from LeafDFe. I wanted a drier page with strong blocks and a few curves, without falling into generic portfolio styling.",
       ctaProjects: "See projects",
       ctaLeaf: "Open LeafDFe",
-      identity: ["23 years old", "Brazil-based", "Native Portuguese", "Conversational English"],
+      identity: ["23 years old", "Brazil-based", "Native Portuguese", "English C1 (EF SET certified)"],
       ribbonEyebrow: "Brazil / Sao Paulo",
       ribbonText:
         "Based in Sao Paulo, with practical experience in ERP operations, business systems and web products."
@@ -684,14 +608,49 @@ const localeContent = {
     },
     feature: {
       eyebrow: "Main cases",
-      title: "Three Leaf products, from booking to tax and delivery operations."
+      title: "Two Leaf products: tax operations and booking."
     },
     evidence: {
       eyebrow: "Real proof",
       title: "Real interfaces, operational flows and end-to-end product work.",
-      copy: "These views cover scheduling, integrations and the day-to-day workflows of three SaaS products without turning the portfolio into a screen dump."
+      copy: "These views cover LeafDFe, Leaf Booking and Dispatcher without turning the portfolio into a screen dump."
     },
     featureCases: [
+      {
+        title: "LeafDFe",
+        eyebrow: "Tax SaaS",
+        summary:
+          "Tax SaaS for moving Brazilian fiscal-document lookup, manifestation and storage out of manual routines, with billing, authentication and multi-company workflows in the same flow.",
+        points: [
+          "SEFAZ lookups and manifestation for NF-e, CT-e, MDF-e and NFS-e over SOAP/mTLS with A1 certificates.",
+          "XML and DANFE downloads, cloud storage, reports and multi-company operation.",
+          "Checkout, authentication, Redis, Prisma and Cloudflare R2 connected inside the product."
+        ],
+        stack: ["Next.js", "React", "TypeScript", "Prisma", "Clerk", "Upstash Redis", "Cloudflare R2", "AbacatePay", "SEFAZ"],
+        link: { label: "leafdfe.com.br", href: "https://www.leafdfe.com.br/" },
+        images: [
+          {
+            image: "./media/leaf-dashboard.png",
+            alt: "Screenshot of the LeafDFe dashboard",
+            title: "Tax dashboard"
+          },
+          {
+            image: "./media/leaf-documentos.png",
+            alt: "Screenshot of the LeafDFe document list",
+            title: "Fiscal documents"
+          },
+          {
+            image: "./media/leaf-multiempresas.png",
+            alt: "Screenshot of the LeafDFe units and certificates view",
+            title: "Multi-company"
+          },
+          {
+            image: "./media/leaf-relatorios.png",
+            alt: "Screenshot of LeafDFe reports",
+            title: "Reports"
+          }
+        ]
+      },
       {
         title: "Leaf Booking",
         eyebrow: "Multi-tenant booking SaaS",
@@ -721,76 +680,6 @@ const localeContent = {
             title: "PIX payments and reconciliation"
           }
         ]
-      },
-      {
-        title: "Leaf Delivery",
-        eyebrow: "White-label delivery",
-        summary:
-          "SaaS for restaurants, liquor stores and local operations to sell through their own channel without losing orders across WhatsApp, counter service, kitchen, tables and delivery.",
-        points: [
-          "Storefront, checkout, public tracking, table QR, waiter flow, tabs and KDS in one product.",
-          "WhatsApp/Evolution, iFood, Abacate Pay PIX, coupons, inventory and recipes inside the operational routine.",
-          "Tenant admin and platform admin with permissions, multi-unit operations, commercial plans and live production workflows."
-        ],
-        stack: ["Next.js", "React", "TypeScript", "NestJS", "Fastify", "Prisma", "PostgreSQL", "Redis", "BullMQ", "Vitest", "AbacatePay", "Evolution API", "iFood"],
-        link: { label: "leafdelivery.com.br", href: "https://leafdelivery.com.br/" },
-        images: [
-          {
-            image: "./media/leaf-delivery-pedidos.png",
-            alt: "Screenshot of the Leaf Delivery order center",
-            title: "Live orders"
-          },
-          {
-            image: "./media/leaf-delivery-kds.png",
-            alt: "Screenshot of the Leaf Delivery kitchen KDS",
-            title: "Kitchen KDS"
-          },
-          {
-            image: "./media/leaf-delivery-storefront.png",
-            alt: "Screenshot of the Leaf Delivery mobile storefront with cart",
-            title: "Mobile storefront"
-          },
-          {
-            image: "./media/leaf-delivery-whatsapp.png",
-            alt: "Screenshot of the Leaf Delivery WhatsApp inbox",
-            title: "WhatsApp inbox"
-          }
-        ]
-      },
-      {
-        title: "LeafDFe",
-        eyebrow: "Tax SaaS",
-        summary:
-          "Tax SaaS for moving Brazilian fiscal-document lookup, manifestation and storage out of manual routines, with billing, authentication and multi-company workflows in the same flow.",
-        points: [
-          "SEFAZ lookups and manifestation for NF-e, CT-e and MDF-e.",
-          "XML and DANFE downloads, cloud storage, reports and multi-company operation.",
-          "Checkout, authentication, Redis, Prisma and Cloudflare R2 connected inside the product."
-        ],
-        stack: ["Next.js", "React", "TypeScript", "Prisma", "Clerk", "Upstash Redis", "Cloudflare R2", "AbacatePay", "SEFAZ"],
-        link: { label: "leafdfe.com.br", href: "https://www.leafdfe.com.br/" },
-        images: [
-          {
-            image: "./media/leaf-dashboard.png",
-            alt: "Screenshot of the LeafDFe dashboard",
-            title: "Tax dashboard"
-          },
-          {
-            image: "./media/leaf-documentos.png",
-            alt: "Screenshot of the LeafDFe document list",
-            title: "Fiscal documents"
-          },
-          {
-            image: "./media/leaf-multiempresas.png",
-            alt: "Screenshot of the LeafDFe units and certificates view",
-            title: "Multi-company"
-          },
-          {
-            image: "./media/leaf-relatorios.png",
-            alt: "Screenshot of LeafDFe reports",
-            title: "Reports"
-          }
-        ]
       }
     ],
     projectsSection: {
@@ -809,7 +698,7 @@ const localeContent = {
     },
     contactSection: {
       eyebrow: "Contact",
-      title: "If you want to talk about product, frontend or automation, I'm available.",
+      title: "If you want to talk about full stack development, technical support or automation, I'm available.",
       copy:
         "Email is still the easiest way to reach me. I also left phone, GitHub, LinkedIn and both resume versions for anyone who wants more context first."
     },
@@ -829,41 +718,12 @@ const localeContent = {
       profileImage: "Profile photo of Guilherme Bezzuoli Ramos"
     },
     stats: [
-      { value: "4", label: "featured projects" },
-      { value: "ERP + SaaS", label: "business systems" },
-      { value: "2", label: "degrees in progress" },
-      { value: "PT-BR / EN", label: "working languages" }
+      { value: "~5 yrs", label: "in ERP software, intern to L3" },
+      { value: "300", label: "clients in the supported base" },
+      { value: "20+", label: "client companies trained" },
+      { value: "C1", label: "English (EF SET certified)" }
     ],
     projects: [
-      {
-        title: "Leaf Delivery",
-        tone: "accent",
-        status: "Live product",
-        meta: "White-label SaaS / Next.js + NestJS + PostgreSQL",
-        summary:
-          "White-label platform for restaurants, liquor stores and local operations to sell through their own channel without losing orders across WhatsApp, counter service, kitchen and delivery.",
-        highlights: [
-          "Storefront, checkout, public tracking, table QR, waiter flow, tabs and KDS kept in one operational loop.",
-          "Operational integrations with WhatsApp/Evolution, iFood, Abacate Pay PIX, coupons, inventory and recipes.",
-          "Tenant admin and platform admin with permissions, multi-unit operations, commercial plans and production-grade workflows."
-        ],
-        stack: [
-          "Next.js",
-          "React",
-          "TypeScript",
-          "Prisma",
-          "PostgreSQL",
-          "NestJS",
-          "Fastify",
-          "Redis",
-          "BullMQ",
-          "Vitest",
-          "AbacatePay",
-          "Evolution API",
-          "iFood"
-        ],
-        links: [{ label: "Live product", href: "https://leafdelivery.com.br/" }]
-      },
       {
         title: "LeafDFe",
         tone: "brand",
@@ -872,7 +732,7 @@ const localeContent = {
         summary:
           "Tax SaaS that centralizes lookup, manifestation and storage of Brazilian fiscal documents to cut manual work from the fiscal team.",
         highlights: [
-          "SEFAZ lookups and manifestation for NF-e, CT-e and MDF-e.",
+          "SEFAZ lookups and manifestation for NF-e, CT-e, MDF-e and NFS-e.",
           "AbacatePay checkout connected to the product and public acquisition pages.",
           "Multi-tenant architecture with Clerk, Redis, Prisma and Cloudflare R2."
         ],
@@ -886,6 +746,21 @@ const localeContent = {
           "Cloudflare R2"
         ],
         links: [{ label: "Live product", href: "https://www.leafdfe.com.br/" }]
+      },
+      {
+        title: "Dispatcher",
+        tone: "accent",
+        status: "Internal AI tool at Softland",
+        meta: "React + Vite + Express + SQLite + Gemini",
+        summary:
+          "Internal tool that turns support-call audio and notes into reports and Redmine tickets. Used by 3 analysts for 6 months, saving 2 to 3 hours of manual logging a day.",
+        highlights: [
+          "React/Vite interface built for repeated internal use.",
+          "Express backend with authentication, rate limiting, Socket.io and SQLite persistence.",
+          "Workflow tied to internal requests, AI transcription and corporate tooling."
+        ],
+        stack: ["React", "TypeScript", "Vite", "Express", "SQLite", "Socket.io", "Gemini"],
+        links: []
       },
       {
         title: "Leaf Booking",
@@ -913,19 +788,18 @@ const localeContent = {
         links: [{ label: "View repository", href: "https://github.com/ramosbezzu/leaf-booking" }]
       },
       {
-        title: "Dispatcher",
-        tone: "accent",
-        status: "Internal AI workflow tool",
-        meta: "React + Vite + Express + SQLite + Gemini",
+        title: "Leaf Delivery",
+        tone: "paper",
+        status: "Live product",
+        meta: "Ordering SaaS / NestJS + PostgreSQL",
         summary:
-          "Internal tool for turning audio and text into tickets, with Redmine integration and separate beta and production environments.",
+          "Multi-tenant ordering platform for restaurants and local businesses, with storefront, POS, kitchen display, WhatsApp, iFood and PIX.",
         highlights: [
-          "React/Vite interface built for repeated internal use.",
-          "Express backend with authentication, rate limiting, Socket.io and SQLite persistence.",
-          "Workflow tied to internal requests, AI transcription and corporate tooling."
+          "Backend migrated from Next.js routes to NestJS/Fastify, with BullMQ workers on GCP Cloud Run.",
+          "Vitest and Playwright tests and Sentry monitoring."
         ],
-        stack: ["React", "TypeScript", "Vite", "Express", "SQLite", "Socket.io", "Gemini"],
-        links: []
+        stack: ["Next.js", "NestJS", "Fastify", "PostgreSQL", "Redis", "BullMQ"],
+        links: [{ label: "Live product", href: "https://leafdelivery.com.br/" }]
       }
     ],
     galleryItems: [
@@ -951,20 +825,6 @@ const localeContent = {
         fileHint: "leaf booking / payments"
       },
       {
-        label: "Leaf Delivery",
-        title: "Live order center for daily operations",
-        image: "./media/leaf-delivery-pedidos.png",
-        alt: "Screenshot of the Leaf Delivery order center",
-        fileHint: "leafdelivery / orders"
-      },
-      {
-        label: "Leaf Delivery",
-        title: "Kitchen KDS and preparation queue",
-        image: "./media/leaf-delivery-kds.png",
-        alt: "Screenshot of the Leaf Delivery kitchen KDS",
-        fileHint: "leafdelivery / kitchen"
-      },
-      {
         label: "LeafDFe",
         title: "Tax dashboard with operational visibility",
         image: "./media/leaf-dashboard.png",
@@ -977,20 +837,6 @@ const localeContent = {
         image: "./media/leaf-documentos.png",
         alt: "Screenshot of the LeafDFe document list",
         fileHint: "leafdfe / documents"
-      },
-      {
-        label: "Leaf Delivery",
-        title: "Mobile storefront with cart",
-        image: "./media/leaf-delivery-storefront.png",
-        alt: "Screenshot of the Leaf Delivery mobile storefront with cart",
-        fileHint: "leafdelivery / storefront"
-      },
-      {
-        label: "Leaf Delivery",
-        title: "WhatsApp inbox inside the operation",
-        image: "./media/leaf-delivery-whatsapp.png",
-        alt: "Screenshot of the Leaf Delivery WhatsApp inbox",
-        fileHint: "leafdelivery / whatsapp"
       },
       {
         label: "LeafDFe",
@@ -1030,14 +876,14 @@ const localeContent = {
     ],
     businessCards: [
       {
-        title: "ERP workflows and business rules",
+        title: "ERP support, from L1 to L3",
         description:
-          "I've worked close to real business routines, so I tend to think about edge cases, validation and bottlenecks before thinking only about the interface."
+          "At Softland Sistemas I handled 15 to 30 tickets a day across a base of about 300 clients (188 on the legacy Delphi ERP), peaking at 50 clients in one day during a SEFAZ outage. I investigated incidents with SQL and logs and handed developers root cause and reproduction steps."
       },
       {
-        title: "Data outputs and productivity",
+        title: "Client training",
         description:
-          "Reports, CSV exports and queries need to help someone decide or verify something. I try to keep that standard in what I ship."
+          "I trained 20+ client companies on the Tax, CRM, Finance, Inventory and bank integration (CNAB 240 and 400) modules, including an on-site class of 10+ people."
       },
       {
         title: "Requirements and functional documentation",
@@ -1063,13 +909,13 @@ const localeContent = {
       },
       {
         label: "Backend and APIs",
-        description: "REST APIs, validation and workers in SaaS products. FastAPI for Python tools and BullMQ for background jobs.",
-        items: ["Node.js", "NestJS", "Fastify", "Express", "FastAPI", "BullMQ", "Zod"]
+        description: "REST APIs, validation and workers in SaaS products. FastAPI for Python tools; messaging and async processing with RabbitMQ and BullMQ queues.",
+        items: ["Node.js", "NestJS", "Fastify", "Express", "FastAPI", "RabbitMQ", "BullMQ", "Zod"]
       },
       {
         label: "Data and persistence",
-        description: "SQL queries, Prisma migrations, caching and data storage in products and internal tools.",
-        items: ["PostgreSQL", "Prisma", "Redis", "Upstash Redis", "SQLite"]
+        description: "Relational and non-relational databases: SQL queries, Prisma migrations, MongoDB, Redis caching and storage in products and internal tools.",
+        items: ["PostgreSQL", "MongoDB", "Prisma", "Redis", "Upstash Redis", "SQLite"]
       },
       {
         label: "Cloud and operations",
@@ -1131,14 +977,6 @@ const localeContent = {
         tier: "secondary"
       },
       {
-        label: "Delivery case",
-        value: "leafdelivery.com.br",
-        href: "https://leafdelivery.com.br/",
-        description: "Live white-label SaaS for delivery, dine-in, kitchen, WhatsApp, iFood, PIX and inventory.",
-        newTab: true,
-        tier: "secondary"
-      },
-      {
         label: "Tax case",
         value: "leafdfe.com.br",
         href: "https://www.leafdfe.com.br/",
@@ -1151,6 +989,14 @@ const localeContent = {
         value: "linkedin.com/in/gbzramos",
         href: "https://linkedin.com/in/gbzramos",
         description: "Professional background and career context.",
+        newTab: true,
+        tier: "secondary"
+      },
+      {
+        label: "Delivery case",
+        value: "leafdelivery.com.br",
+        href: "https://leafdelivery.com.br/",
+        description: "Ordering SaaS in production, with NestJS, BullMQ queues and WhatsApp, iFood and PIX integrations.",
         newTab: true,
         tier: "secondary"
       },
@@ -1499,10 +1345,9 @@ function renderGallery(content) {
   if (!container) return;
 
   const bookingSlides = content.galleryItems.filter((item) => item.label === "Leaf Booking");
-  const deliverySlides = content.galleryItems.filter((item) => item.label === "Leaf Delivery");
   const dfeSlides = content.galleryItems.filter((item) => item.label === "LeafDFe");
   const proofs = content.galleryItems.filter(
-    (item) => !["Leaf Booking", "Leaf Delivery", "LeafDFe"].includes(item.label)
+    (item) => !["Leaf Booking", "LeafDFe"].includes(item.label)
   );
 
   const renderProofs = (items) =>
@@ -1526,24 +1371,17 @@ function renderGallery(content) {
   container.innerHTML = `
     <article class="gallery-showcase" data-reveal>
       <div class="gallery-showcase__head">
-        <p>Leaf Booking</p>
-        <span>agendamento / SaaS</span>
-      </div>
-      ${renderCaseSlideshow(bookingSlides, "Leaf Booking slideshow")}
-    </article>
-    <article class="gallery-showcase" data-reveal>
-      <div class="gallery-showcase__head">
-        <p>Leaf Delivery</p>
-        <span>delivery / operação</span>
-      </div>
-      ${renderCaseSlideshow(deliverySlides, "Leaf Delivery slideshow")}
-    </article>
-    <article class="gallery-showcase" data-reveal>
-      <div class="gallery-showcase__head">
         <p>LeafDFe</p>
         <span>fiscal / SaaS</span>
       </div>
       ${renderCaseSlideshow(dfeSlides, "LeafDFe slideshow")}
+    </article>
+    <article class="gallery-showcase" data-reveal>
+      <div class="gallery-showcase__head">
+        <p>Leaf Booking</p>
+        <span>agendamento / SaaS</span>
+      </div>
+      ${renderCaseSlideshow(bookingSlides, "Leaf Booking slideshow")}
     </article>
     <div class="gallery-cluster gallery-cluster--proofs">
       ${renderProofs(proofs)}

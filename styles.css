@@ -707,6 +707,22 @@ h3 {
   border-bottom: 0;
 }
 
+/* Com dois cases, o segundo ocupa a linha inteira, espelhado. */
+.feature-case:nth-child(2):last-child {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.8fr) minmax(0, 1.2fr);
+}
+
+.feature-case:nth-child(2):last-child .case-slideshow {
+  order: 2;
+  height: 100%;
+  min-height: 480px;
+  aspect-ratio: auto;
+  border-left: 2px solid var(--line);
+  border-bottom: 0;
+}
+
 .feature-case__body {
   display: grid;
   gap: 14px;
@@ -1351,6 +1367,20 @@ h3 {
     min-height: 220px;
     aspect-ratio: 16 / 10;
     border-right: 0;
+    border-bottom: 2px solid var(--line);
+  }
+
+  .feature-case:nth-child(2):last-child {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .feature-case:nth-child(2):last-child .case-slideshow {
+    order: 0;
+    height: auto;
+    min-height: 220px;
+    aspect-ratio: 16 / 10;
+    border-left: 0;
     border-bottom: 2px solid var(--line);
   }
 
